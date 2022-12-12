@@ -1,0 +1,151 @@
+\hypertarget{main_8cpp_source}{}\doxysection{main.\+cpp}
+\mbox{\hyperlink{main_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00001}00001 \textcolor{comment}{// Nour Ahmed}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00002}00002 \textcolor{comment}{// Matrikal-\/Nr.: 5200991}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00003}00003 \textcolor{comment}{// Assignment 1 – Doubly Linked List}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00026}00026 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{utillist_8cpp}{utillist.cpp}}"{}}  \textcolor{comment}{// to avoid link errors we may get while creating an object of list class}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00027}00027 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{utillist_8h}{utillist.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00028}00028 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{my__extras_8h}{my\_extras.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00029}00029 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00032}00032 \textcolor{comment}{//mockup class used in testing}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00033}\mbox{\hyperlink{class_person}{00033}} \textcolor{keyword}{class }\mbox{\hyperlink{class_person}{Person}} \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00034}00034     std::string m\_name;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00035}00035     \textcolor{keywordtype}{int} m\_age;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00036}00036 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00037}\mbox{\hyperlink{class_person_aad279401774736035484d8e7d8834eea}{00037}}     \mbox{\hyperlink{class_person_aad279401774736035484d8e7d8834eea}{Person}}(std::string name = \textcolor{stringliteral}{"{}"{}}, \textcolor{keywordtype}{int} age = -\/1) : m\_name(name), m\_age(age) \{\};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00038}\mbox{\hyperlink{class_person_ab20f096fdfd5201818c45754af4c3e3b}{00038}}     std::string \mbox{\hyperlink{class_person_ab20f096fdfd5201818c45754af4c3e3b}{getName}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_name; \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00039}\mbox{\hyperlink{class_person_a4b66dbee570398920b8fb6aacddd2559}{00039}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_person_a4b66dbee570398920b8fb6aacddd2559}{getAge}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_age; \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00041}\mbox{\hyperlink{class_person_a8e57cba83f31dd738dcd85a6a3497fcc}{00041}}     \textcolor{keyword}{friend} std::ostream\& \mbox{\hyperlink{class_person_a8e57cba83f31dd738dcd85a6a3497fcc}{operator<<}}(std::ostream\& iostream, \textcolor{keyword}{const} \mbox{\hyperlink{class_person}{Person}}\& person) \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00042}00042         \textcolor{keywordflow}{return} (iostream << person.\mbox{\hyperlink{class_person_ab20f096fdfd5201818c45754af4c3e3b}{getName}}() << \textcolor{stringliteral}{"{}\(\backslash\)t"{}} << person.\mbox{\hyperlink{class_person_a4b66dbee570398920b8fb6aacddd2559}{getAge}}() << std::endl);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00043}00043     \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00044}00044 \};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00048}\mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00048}} \textcolor{keywordtype}{int} \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}() \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00049}00049     \mbox{\hyperlink{namespaceutil_a2d640f1f28221d6aa6b9aacd805125b3}{util::printHeader}}(\textcolor{stringliteral}{"{}NourUtilList (Doubly Linked Lists) Application"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00051}00051     \mbox{\hyperlink{namespaceutil_a0cd6dff1a3ac1555425951b35597a45f}{util::printSubHeader}}(\textcolor{stringliteral}{"{}Variable used for testing and their values"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00052}00052     \mbox{\hyperlink{classutil_1_1list}{util::list<int>}} myList;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00053}00053     std::cout << \textcolor{stringliteral}{"{}myList: "{}} << myList << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00054}00054     std::cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00055}00055     \mbox{\hyperlink{namespaceutil_a0cd6dff1a3ac1555425951b35597a45f}{util::printSubHeader}}(\textcolor{stringliteral}{"{}Test Member Methods"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00056}00056     }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00057}00057     \mbox{\hyperlink{namespaceutil_a106a5b0be34ad130931d45b61cceb6f5}{util::printTestCase}}(\textcolor{stringliteral}{"{}push\_front() and push\_back()"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00058}00058     myList.\mbox{\hyperlink{classutil_1_1list_a34564499cb63b820d29c8a4054ae093f}{push\_front}}(3);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00059}00059     myList.\mbox{\hyperlink{classutil_1_1list_a8cd44954211aebb4131caaa058085421}{push\_back}}(5);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00060}00060     myList.\mbox{\hyperlink{classutil_1_1list_a8cd44954211aebb4131caaa058085421}{push\_back}}(12);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00061}00061     myList.\mbox{\hyperlink{classutil_1_1list_a8cd44954211aebb4131caaa058085421}{push\_back}}(9);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00062}00062     myList.\mbox{\hyperlink{classutil_1_1list_a8cd44954211aebb4131caaa058085421}{push\_back}}(12);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00063}00063     myList.\mbox{\hyperlink{classutil_1_1list_a34564499cb63b820d29c8a4054ae093f}{push\_front}}(6);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00064}00064     myList.\mbox{\hyperlink{classutil_1_1list_a8cd44954211aebb4131caaa058085421}{push\_back}}(88);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00065}00065     std::cout << \textcolor{stringliteral}{"{}\(\backslash\)tmyList: "{}} << myList << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00067}00067     \mbox{\hyperlink{namespaceutil_a106a5b0be34ad130931d45b61cceb6f5}{util::printTestCase}}(\textcolor{stringliteral}{"{}front()"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00068}00068     std::cout << \textcolor{stringliteral}{"{}front(): "{}} << myList.\mbox{\hyperlink{classutil_1_1list_a6de8a701d5cdacd2ab8bddf261bb4661}{front}}() << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00070}00070     myList.\mbox{\hyperlink{classutil_1_1list_a6de8a701d5cdacd2ab8bddf261bb4661}{front}}() = 100;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00071}00071     std::cout << \textcolor{stringliteral}{"{}\(\backslash\)tset front(): "{}} << myList.\mbox{\hyperlink{classutil_1_1list_a6de8a701d5cdacd2ab8bddf261bb4661}{front}}() << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00072}00072     std::cout << \textcolor{stringliteral}{"{}\(\backslash\)tmyList: "{}} << myList << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00074}00074     \mbox{\hyperlink{namespaceutil_a106a5b0be34ad130931d45b61cceb6f5}{util::printTestCase}}(\textcolor{stringliteral}{"{}back()"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00075}00075     std::cout << \textcolor{stringliteral}{"{}\(\backslash\)tback() : "{}} << myList.\mbox{\hyperlink{classutil_1_1list_ad589c3344bbcec29c40042561bce57e6}{back}}() << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00076}00076 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00077}00077     myList.\mbox{\hyperlink{classutil_1_1list_ad589c3344bbcec29c40042561bce57e6}{back}}() = 200;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00078}00078     std::cout << \textcolor{stringliteral}{"{}\(\backslash\)tset back(): "{}} << myList.\mbox{\hyperlink{classutil_1_1list_ad589c3344bbcec29c40042561bce57e6}{back}}() << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00079}00079     std::cout << \textcolor{stringliteral}{"{}\(\backslash\)tmyList: "{}} << myList << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00081}00081     std::cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00083}00083     \mbox{\hyperlink{namespaceutil_a106a5b0be34ad130931d45b61cceb6f5}{util::printTestCase}}(\textcolor{stringliteral}{"{}pop\_front()"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00085}00085     myList.\mbox{\hyperlink{classutil_1_1list_a8e4b226b16c012078ebf8bdce9afe76a}{pop\_front}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00086}00086     std::cout << \textcolor{stringliteral}{"{}\(\backslash\)tmyList: "{}} << myList << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00088}00088     \mbox{\hyperlink{namespaceutil_a106a5b0be34ad130931d45b61cceb6f5}{util::printTestCase}}(\textcolor{stringliteral}{"{}pop\_back()"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00089}00089     myList.\mbox{\hyperlink{classutil_1_1list_a85f9138efb4543f32790ec0c03d6d670}{pop\_back}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00090}00090     std::cout << \textcolor{stringliteral}{"{}\(\backslash\)tmyList: "{}} << myList << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00092}00092     std::cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00093}00093     \mbox{\hyperlink{namespaceutil_a0cd6dff1a3ac1555425951b35597a45f}{util::printSubHeader}}(\textcolor{stringliteral}{"{}Test Iterators"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00095}00095     \textcolor{comment}{// Finally, print your list as shown:}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00096}00096     \mbox{\hyperlink{classutil_1_1list_1_1iterator}{util::list<int>::iterator}} myItB = myList.\mbox{\hyperlink{classutil_1_1list_a22c3d41fe179549677ef2bdf03dcb9d9}{begin}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00097}00097     \mbox{\hyperlink{classutil_1_1list_1_1iterator}{util::list<int>::iterator}} myItE = myList.\mbox{\hyperlink{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}{end}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00098}00098     \textcolor{keywordflow}{while} (myItB != myItE) \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00099}00099         std::cout << \textcolor{stringliteral}{"{}\(\backslash\)t"{}} << (*myItB) << std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00100}00100         ++myItB;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00101}00101     \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00104}00104     \mbox{\hyperlink{namespaceutil_a106a5b0be34ad130931d45b61cceb6f5}{util::printTestCase}}(\textcolor{stringliteral}{"{}Test erase()"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00106}00106     \textcolor{comment}{// set the iterator to the begin of the list again}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00107}00107     myItB = myList.\mbox{\hyperlink{classutil_1_1list_a22c3d41fe179549677ef2bdf03dcb9d9}{begin}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00108}00108     ++myItB; \textcolor{comment}{//advance the iterator one element ahead}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00110}00110     myList.\mbox{\hyperlink{classutil_1_1list_aea23f42622a3775a323c3b0687794b26}{erase}}(myItB);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00111}00111     std::cout << \textcolor{stringliteral}{"{}\(\backslash\)tmyList: "{}} << myList << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00112}00112 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00115}00115 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00116}00116 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00118}00118 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00119}00119     std::cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00120}00120     \mbox{\hyperlink{namespaceutil_a0cd6dff1a3ac1555425951b35597a45f}{util::printSubHeader}}(\textcolor{stringliteral}{"{}Test Other Methods"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00121}00121 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00122}00122     \mbox{\hyperlink{namespaceutil_a106a5b0be34ad130931d45b61cceb6f5}{util::printTestCase}}(\textcolor{stringliteral}{"{}Test clear()"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00123}00123     myList.\mbox{\hyperlink{classutil_1_1list_ac6a3cd1d3dce0343ba83b80d085dcae6}{clear}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00124}00124     std::cout << \textcolor{stringliteral}{"{}\(\backslash\)tmyList: "{}} << myList << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00125}00125 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00128}00128 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00129}00129     std::cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00130}00130     \mbox{\hyperlink{namespaceutil_a0cd6dff1a3ac1555425951b35597a45f}{util::printSubHeader}}(\textcolor{stringliteral}{"{}Test Iterators"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00131}00131 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00132}00132     \mbox{\hyperlink{classutil_1_1list}{util::list<Person>}} l; \textcolor{comment}{// Store a type of your choice}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00133}00133     }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00134}00134     \textcolor{comment}{// Call push\_back a few times to add elements}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00135}00135     l.\mbox{\hyperlink{classutil_1_1list_a8cd44954211aebb4131caaa058085421}{push\_back}}(\mbox{\hyperlink{class_person}{Person}}(\textcolor{stringliteral}{"{}AB"{}}, 10));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00136}00136     l.\mbox{\hyperlink{classutil_1_1list_a8cd44954211aebb4131caaa058085421}{push\_back}}(\mbox{\hyperlink{class_person}{Person}}(\textcolor{stringliteral}{"{}CD"{}}, 20));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00137}00137     l.\mbox{\hyperlink{classutil_1_1list_a8cd44954211aebb4131caaa058085421}{push\_back}}(\mbox{\hyperlink{class_person}{Person}}(\textcolor{stringliteral}{"{}EF"{}}, 30));}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00138}00138 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00139}00139     std::cout << l << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00140}00140     }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00141}00141     \textcolor{comment}{// Finally, print your list as shown:}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00142}00142     \mbox{\hyperlink{classutil_1_1list_1_1iterator}{util::list<Person>::iterator}} itB = l.\mbox{\hyperlink{classutil_1_1list_a22c3d41fe179549677ef2bdf03dcb9d9}{begin}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00143}00143     \mbox{\hyperlink{classutil_1_1list_1_1iterator}{util::list<Person>::iterator}} itE = l.\mbox{\hyperlink{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}{end}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00144}00144     \textcolor{keywordflow}{while} (itB != itE) \{}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00145}00145         std::cout << \textcolor{stringliteral}{"{}\(\backslash\)t"{}} << (*itB).getName() << \textcolor{stringliteral}{"{}\(\backslash\)t"{}} << itB-\/>getAge() << std::endl;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00146}00146         ++itB;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00147}00147     \}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00148}00148     std::cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00149}00149 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00150}00150     }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00151}00151     \mbox{\hyperlink{namespaceutil_a106a5b0be34ad130931d45b61cceb6f5}{util::printTestCase}}(\textcolor{stringliteral}{"{}Test erase()"{}});}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00152}00152 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00153}00153     \textcolor{comment}{// set the iterator to the begin of the list again}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00154}00154     itB = l.\mbox{\hyperlink{classutil_1_1list_a22c3d41fe179549677ef2bdf03dcb9d9}{begin}}();}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00155}00155     ++itB; \textcolor{comment}{//advance the iterator one element ahead}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00156}00156 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00157}00157     l.\mbox{\hyperlink{classutil_1_1list_aea23f42622a3775a323c3b0687794b26}{erase}}(itB);}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00158}00158     std::cout << \textcolor{stringliteral}{"{}\(\backslash\)tmyList: "{}} << l << \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00159}00159 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00160}00160     \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00161}00161 \textcolor{comment}{    itE = l.end();}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00162}00162 \textcolor{comment}{    l.erase(itE);}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00163}00163 \textcolor{comment}{    std::cout << "{}\(\backslash\)tmyList: "{} << l << "{}\(\backslash\)n"{};}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00164}00164 \textcolor{comment}{    */}}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00165}00165 }
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00166}00166     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{main_8cpp_source_l00167}00167 \}}
+
+\end{DoxyCode}

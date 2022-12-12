@@ -1,0 +1,267 @@
+\hypertarget{classutil_1_1list}{}\doxysection{util\+::list\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classutil_1_1list}\index{util::list$<$ T $>$@{util::list$<$ T $>$}}
+
+
+{\ttfamily \#include $<$utillist.\+h$>$}
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classutil_1_1list_a8454da40e36f0d44cb989d32649f811a}{list}} ()
+\item 
+\mbox{\hyperlink{classutil_1_1list_ab6b706cd4edff5185968fdb935c84ddc}{$\sim$list}} ()
+\item 
+\mbox{\hyperlink{classutil_1_1list_ab27649cee72d09b8757dfdde6b518b67}{list}} (const \mbox{\hyperlink{classutil_1_1list}{list}}$<$ T $>$ \&dll)=delete
+\item 
+\mbox{\hyperlink{classutil_1_1list}{list}} \& \mbox{\hyperlink{classutil_1_1list_a4a409cb58ce3ea240315129094a394d4}{operator=}} (\mbox{\hyperlink{classutil_1_1list}{list}} const \&)=delete
+\item 
+T \& \mbox{\hyperlink{classutil_1_1list_a6de8a701d5cdacd2ab8bddf261bb4661}{front}} ()
+\item 
+T \& \mbox{\hyperlink{classutil_1_1list_ad589c3344bbcec29c40042561bce57e6}{back}} ()
+\item 
+void \mbox{\hyperlink{classutil_1_1list_a34564499cb63b820d29c8a4054ae093f}{push\+\_\+front}} (const T \&element)
+\item 
+void \mbox{\hyperlink{classutil_1_1list_a8e4b226b16c012078ebf8bdce9afe76a}{pop\+\_\+front}} ()
+\item 
+void \mbox{\hyperlink{classutil_1_1list_a85f9138efb4543f32790ec0c03d6d670}{pop\+\_\+back}} ()
+\item 
+void \mbox{\hyperlink{classutil_1_1list_a8cd44954211aebb4131caaa058085421}{push\+\_\+back}} (const T \&element)
+\item 
+void \mbox{\hyperlink{classutil_1_1list_ac6a3cd1d3dce0343ba83b80d085dcae6}{clear}} ()
+\item 
+size\+\_\+t \mbox{\hyperlink{classutil_1_1list_ab02a8919139c4189e2e7f392c0c3ffe7}{size}} () const
+\item 
+\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list_a22c3d41fe179549677ef2bdf03dcb9d9}{begin}} ()
+\item 
+\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}{end}} ()
+\item 
+\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list_ab577f446772d90c2b6c85424ad1d5aed}{insert}} (\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} position, const T \&element)
+\item 
+\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list_aea23f42622a3775a323c3b0687794b26}{erase}} (\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} position)
+\begin{DoxyCompactList}\small\item\em Remove element at given position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class U $>$ }\\std\+::ostream \& \mbox{\hyperlink{classutil_1_1list_ac898f0dde3343ae7f045c219e47a2191}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classutil_1_1list}{list}}$<$ U $>$ \&the\+List)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class util\+::list$<$ T $>$}
+Class list represents a container which organizes stored objects with a so-\/called doubly linked list. A doubly linked list is basically a list of nodes which are connected among each other 
+
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00039}{39}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classutil_1_1list_a8454da40e36f0d44cb989d32649f811a}\label{classutil_1_1list_a8454da40e36f0d44cb989d32649f811a}} 
+\index{util::list$<$ T $>$@{util::list$<$ T $>$}!list@{list}}
+\index{list@{list}!util::list$<$ T $>$@{util::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{list()}{list()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::list (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00069}{69}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+
+\mbox{\Hypertarget{classutil_1_1list_ab6b706cd4edff5185968fdb935c84ddc}\label{classutil_1_1list_ab6b706cd4edff5185968fdb935c84ddc}} 
+\index{util::list$<$ T $>$@{util::list$<$ T $>$}!````~list@{$\sim$list}}
+\index{````~list@{$\sim$list}!util::list$<$ T $>$@{util::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$list()}{~list()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{classutil_1_1list}{list}}}
+
+
+
+Definition at line \mbox{\hyperlink{utillist_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{utillist_8cpp_source}{utillist.\+cpp}}.
+
+\mbox{\Hypertarget{classutil_1_1list_ab27649cee72d09b8757dfdde6b518b67}\label{classutil_1_1list_ab27649cee72d09b8757dfdde6b518b67}} 
+\index{util::list$<$ T $>$@{util::list$<$ T $>$}!list@{list}}
+\index{list@{list}!util::list$<$ T $>$@{util::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{list()}{list()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::list (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutil_1_1list}{list}}$<$ T $>$ \&}]{dll }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classutil_1_1list_ad589c3344bbcec29c40042561bce57e6}\label{classutil_1_1list_ad589c3344bbcec29c40042561bce57e6}} 
+\index{util::list$<$ T $>$@{util::list$<$ T $>$}!back@{back}}
+\index{back@{back}!util::list$<$ T $>$@{util::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{back()}{back()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \& \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00081}{81}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+
+\mbox{\Hypertarget{classutil_1_1list_a22c3d41fe179549677ef2bdf03dcb9d9}\label{classutil_1_1list_a22c3d41fe179549677ef2bdf03dcb9d9}} 
+\index{util::list$<$ T $>$@{util::list$<$ T $>$}!begin@{begin}}
+\index{begin@{begin}!util::list$<$ T $>$@{util::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00170}{170}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+
+\mbox{\Hypertarget{classutil_1_1list_ac6a3cd1d3dce0343ba83b80d085dcae6}\label{classutil_1_1list_ac6a3cd1d3dce0343ba83b80d085dcae6}} 
+\index{util::list$<$ T $>$@{util::list$<$ T $>$}!clear@{clear}}
+\index{clear@{clear}!util::list$<$ T $>$@{util::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::clear}
+
+
+
+Definition at line \mbox{\hyperlink{utillist_8cpp_source_l00094}{94}} of file \mbox{\hyperlink{utillist_8cpp_source}{utillist.\+cpp}}.
+
+\mbox{\Hypertarget{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}\label{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}} 
+\index{util::list$<$ T $>$@{util::list$<$ T $>$}!end@{end}}
+\index{end@{end}!util::list$<$ T $>$@{util::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00178}{178}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+
+\mbox{\Hypertarget{classutil_1_1list_aea23f42622a3775a323c3b0687794b26}\label{classutil_1_1list_aea23f42622a3775a323c3b0687794b26}} 
+\index{util::list$<$ T $>$@{util::list$<$ T $>$}!erase@{erase}}
+\index{erase@{erase}!util::list$<$ T $>$@{util::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}}}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Remove element at given position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Iterator pointing to element to be erased. Iterator must be valid and de-\/referenceable. For that reason, the \mbox{\hyperlink{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}{end()}} iterator cannot be used as a parameter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An iterator pointing to the next element (the successor of the erased object) or \mbox{\hyperlink{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}{end()}}.
+\end{DoxyReturn}
+@description This function will erase the element at the given position and thus shorten the list by one. 
+
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00213}{213}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+
+\mbox{\Hypertarget{classutil_1_1list_a6de8a701d5cdacd2ab8bddf261bb4661}\label{classutil_1_1list_a6de8a701d5cdacd2ab8bddf261bb4661}} 
+\index{util::list$<$ T $>$@{util::list$<$ T $>$}!front@{front}}
+\index{front@{front}!util::list$<$ T $>$@{util::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{front()}{front()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \& \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::front (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00078}{78}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+
+\mbox{\Hypertarget{classutil_1_1list_ab577f446772d90c2b6c85424ad1d5aed}\label{classutil_1_1list_ab577f446772d90c2b6c85424ad1d5aed}} 
+\index{util::list$<$ T $>$@{util::list$<$ T $>$}!insert@{insert}}
+\index{insert@{insert}!util::list$<$ T $>$@{util::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}}}]{position,  }\item[{const T \&}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Adds element one position before the object iterator is currently pointing to. iterator may be the \mbox{\hyperlink{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}{end()}} iterator. Returns an iterator pointing to the newly added element. 
+
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00196}{196}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+
+\mbox{\Hypertarget{classutil_1_1list_a4a409cb58ce3ea240315129094a394d4}\label{classutil_1_1list_a4a409cb58ce3ea240315129094a394d4}} 
+\index{util::list$<$ T $>$@{util::list$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!util::list$<$ T $>$@{util::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\mbox{\hyperlink{classutil_1_1list}{list}} \& \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutil_1_1list}{list}}$<$ T $>$ const \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classutil_1_1list_a85f9138efb4543f32790ec0c03d6d670}\label{classutil_1_1list_a85f9138efb4543f32790ec0c03d6d670}} 
+\index{util::list$<$ T $>$@{util::list$<$ T $>$}!pop\_back@{pop\_back}}
+\index{pop\_back@{pop\_back}!util::list$<$ T $>$@{util::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pop\_back()}{pop\_back()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::pop\+\_\+back}
+
+
+
+Definition at line \mbox{\hyperlink{utillist_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{utillist_8cpp_source}{utillist.\+cpp}}.
+
+\mbox{\Hypertarget{classutil_1_1list_a8e4b226b16c012078ebf8bdce9afe76a}\label{classutil_1_1list_a8e4b226b16c012078ebf8bdce9afe76a}} 
+\index{util::list$<$ T $>$@{util::list$<$ T $>$}!pop\_front@{pop\_front}}
+\index{pop\_front@{pop\_front}!util::list$<$ T $>$@{util::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pop\_front()}{pop\_front()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::pop\+\_\+front}
+
+
+
+Definition at line \mbox{\hyperlink{utillist_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{utillist_8cpp_source}{utillist.\+cpp}}.
+
+\mbox{\Hypertarget{classutil_1_1list_a8cd44954211aebb4131caaa058085421}\label{classutil_1_1list_a8cd44954211aebb4131caaa058085421}} 
+\index{util::list$<$ T $>$@{util::list$<$ T $>$}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!util::list$<$ T $>$@{util::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::push\+\_\+back (\begin{DoxyParamCaption}\item[{const T \&}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00104}{104}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+
+\mbox{\Hypertarget{classutil_1_1list_a34564499cb63b820d29c8a4054ae093f}\label{classutil_1_1list_a34564499cb63b820d29c8a4054ae093f}} 
+\index{util::list$<$ T $>$@{util::list$<$ T $>$}!push\_front@{push\_front}}
+\index{push\_front@{push\_front}!util::list$<$ T $>$@{util::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push\_front()}{push\_front()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::push\+\_\+front (\begin{DoxyParamCaption}\item[{const T \&}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00084}{84}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+
+\mbox{\Hypertarget{classutil_1_1list_ab02a8919139c4189e2e7f392c0c3ffe7}\label{classutil_1_1list_ab02a8919139c4189e2e7f392c0c3ffe7}} 
+\index{util::list$<$ T $>$@{util::list$<$ T $>$}!size@{size}}
+\index{size@{size}!util::list$<$ T $>$@{util::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+size\+\_\+t \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::size}
+
+
+
+Definition at line \mbox{\hyperlink{utillist_8cpp_source_l00108}{108}} of file \mbox{\hyperlink{utillist_8cpp_source}{utillist.\+cpp}}.
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classutil_1_1list_ac898f0dde3343ae7f045c219e47a2191}\label{classutil_1_1list_ac898f0dde3343ae7f045c219e47a2191}} 
+\index{util::list$<$ T $>$@{util::list$<$ T $>$}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!util::list$<$ T $>$@{util::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+template$<$class U $>$ \\
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classutil_1_1list}{list}}$<$ U $>$ \&}]{the\+List }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \mbox{\hyperlink{utillist_8cpp_source_l00140}{140}} of file \mbox{\hyperlink{utillist_8cpp_source}{utillist.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{utillist_8h}{utillist.\+h}}\item 
+\mbox{\hyperlink{utillist_8cpp}{utillist.\+cpp}}\end{DoxyCompactItemize}

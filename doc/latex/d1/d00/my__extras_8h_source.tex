@@ -1,0 +1,53 @@
+\hypertarget{my__extras_8h_source}{}\doxysection{my\+\_\+extras.\+h}
+\mbox{\hyperlink{my__extras_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00001}00001 \textcolor{comment}{// Nour Ahmed}}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00002}00002 \textcolor{comment}{// Matrikal-\/Nr.: 5200991}}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00017}00017 \textcolor{preprocessor}{\#ifndef MY\_EXTRAS\_H}}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00018}00018 \textcolor{preprocessor}{\#define MY\_EXTRAS\_H}}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00020}00020 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00022}\mbox{\hyperlink{namespaceutil}{00022}} \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceutil}{util}} \{}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00024}00024 \textcolor{comment}{/*=========================================================================*}}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00025}00025 \textcolor{comment}{     *      Some Utility functions for printing nice text output               *}}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00026}00026 \textcolor{comment}{     *=========================================================================*/}}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00037}\mbox{\hyperlink{namespaceutil_a2d640f1f28221d6aa6b9aacd805125b3}{00037}} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceutil_a2d640f1f28221d6aa6b9aacd805125b3}{printHeader}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* text) \{}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00038}00038     \textcolor{keywordtype}{size\_t} spaces\_needed = (80 -\/ std::strlen(text)) / 2 -\/ 2;}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00040}00040     std::cout << \textcolor{stringliteral}{"{}\(\backslash\)033[1;30;106m"{}}; \textcolor{comment}{// set text and background colors}}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00041}00041     std::cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n-\/"{}};}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00042}00042     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < spaces\_needed; ++i) \{}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00043}00043         std::cout << \textcolor{stringliteral}{"{} "{}};}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00044}00044     \}}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00045}00045     std::cout << text;}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00046}00046     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < spaces\_needed; ++i) \{}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00047}00047         std::cout << \textcolor{stringliteral}{"{} "{}};}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00048}00048     \}}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00049}00049     std::cout << \textcolor{stringliteral}{"{} -\/\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00050}00050     std::cout << \textcolor{stringliteral}{"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00051}00051     std::cout << \textcolor{stringliteral}{"{}\(\backslash\)033[0m\(\backslash\)n"{}}; \textcolor{comment}{// reset text and background colors}}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00052}00052 \}}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00054}\mbox{\hyperlink{namespaceutil_a0cd6dff1a3ac1555425951b35597a45f}{00054}} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceutil_a0cd6dff1a3ac1555425951b35597a45f}{printSubHeader}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* text) \{}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00055}00055     std::cout << \textcolor{stringliteral}{"{}\(\backslash\)033[32m"{}}; \textcolor{comment}{// set text and background colors}}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00056}00056     std::cout << text;}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00057}00057     std::cout << \textcolor{stringliteral}{"{}\(\backslash\)033[0m\(\backslash\)n"{}}; \textcolor{comment}{// reset text and background colors}}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00058}00058 \}}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00060}\mbox{\hyperlink{namespaceutil_a106a5b0be34ad130931d45b61cceb6f5}{00060}} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespaceutil_a106a5b0be34ad130931d45b61cceb6f5}{printTestCase}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* text) \{}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00061}00061     std::cout << \textcolor{stringliteral}{"{}\(\backslash\)033[93m  > ["{}}; \textcolor{comment}{// set text and background colors}}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00062}00062     std::cout << text;}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00063}00063     std::cout << \textcolor{stringliteral}{"{}]\(\backslash\)033[0m \(\backslash\)n"{}}; \textcolor{comment}{// reset text and background colors}}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00064}00064 \}}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00068}00068 \} \textcolor{comment}{// namespace util}}
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{my__extras_8h_source_l00070}00070 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* MY\_EXTRAS\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
