@@ -16,7 +16,7 @@
  * Class list represents a container which organizes stored objects with
  * a so-called doubly linked list. A doubly linked list is basically
  * a list of nodes which are connected among each other
- * This class behavior will be similar to the std::list (for the implmented
+ * This class behavior will be similar to the std::list (for the implemented
  * part of its functionality).
  *========================================================================**/
 
@@ -39,12 +39,14 @@ list<T>::~list() {
 
 template <class T>
 void list<T>::pop_front() {
-    // check whether the doubly linked list is empty or not.If it is empty, then do nothing.
+    // check whether the doubly linked list is empty or not.
+    // If it is empty, then do nothing.
     if (head == nullptr) {
         return;
     }
 
-    // check whether the doubly linked List has just one node.If it does, we just delete that nodeand set the headand tail pointers to NULL.
+    // check whether the doubly linked List has just one node.If it does, 
+    // we just delete that node and set the head and tail pointers to NULL.
     if (head->next == nullptr) {
         delete head;
         head = nullptr;
