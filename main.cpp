@@ -26,7 +26,9 @@
 #include "utillist.cpp"  // to avoid link errors we may get while creating an object of list class
 #include "utillist.h"
 #include "my_extras.h"
+
 #include <iostream>
+#include <string>
 
 
 //mockup class used in testing
@@ -38,8 +40,8 @@ public:
 	std::string getName() const { return m_name; }
 	int getAge() const { return m_age; }
 
-	friend std::ostream& operator<<(std::ostream& iostream, const Person& person) {
-		return (iostream << person.getName() << "\t" << person.getAge() << std::endl);
+    friend std::ostream& operator<<(std::ostream& iostream, const Person& person) {
+        return (iostream << person.getName() << "\t" << person.getAge() << std::endl);
 	}
 };
 
@@ -109,25 +111,15 @@ int main() {
 
 	myList.erase(myItB);
 	std::cout << "\tmyList: " << myList << "\n";
-
-
-
-
-
-
-
 	std::cout << "-------------------------------------------------------------------------------\n\n";
+	
 	util::printSubHeader("Test Other Methods");
 
 	util::printTestCase("Test clear()");
 	myList.clear();
 	std::cout << "\tmyList: " << myList << "\n";
-
-
-
-
 	std::cout << "-------------------------------------------------------------------------------\n\n";
-	util::printSubHeader("Test Iterators");
+
 
 	util::list<Person> l; // Store a type of your choice
     
@@ -135,9 +127,14 @@ int main() {
 	l.push_back(Person("AB", 10));
 	l.push_back(Person("CD", 20));
 	l.push_back(Person("EF", 30));
+	l.push_back(Person("GH", 40));
 
-	std::cout << l << "\n";
-	
+
+	util::printSubHeader("Variable used for testing and their values");
+	std::cout << "List l: " << l;
+	std::cout << "-------------------------------------------------------------------------------\n\n";
+
+	util::printSubHeader("Test Iterators");
 	// Finally, print your list as shown:
 	util::list<Person>::iterator itB = l.begin();
 	util::list<Person>::iterator itE = l.end();
@@ -147,7 +144,8 @@ int main() {
 	}
 	std::cout << "-------------------------------------------------------------------------------\n\n";
 
-	
+
+	util::printSubHeader("Test erase()");	
 	util::printTestCase("Test erase()");
 
 	// set the iterator to the begin of the list again
@@ -155,13 +153,29 @@ int main() {
 	++itB; //advance the iterator one element ahead
 
 	l.erase(itB);
-	std::cout << "\tmyList: " << l << "\n";
+	std::cout << " List l: " << l << "\n";
 
-	/*
+
+	util::printTestCase("Test erase() the end() element");
 	itE = l.end();
 	l.erase(itE);
-	std::cout << "\tmyList: " << l << "\n";
-	*/
+	std::cout << " List l: " << l << "\n";
+	std::cout << "-------------------------------------------------------------------------------\n\n";
+
+	util::printSubHeader("Test insert()");
+	util::printTestCase("Test insert()");
+
+	// set the iterator to the begin of the list again
+	itB = l.begin();
+	++itB; //advance the iterator one element ahead
+	l.insert(itB, Person("XY", 100));
+	std::cout << " List l: " << l << "\n";
+
+	util::printTestCase("Test insert() at end()");
+	l.insert(l.end(), Person("ZZ", 200));
+	std::cout << " List l: " << l << "\n";
+
+
 
 	return 0;
 }

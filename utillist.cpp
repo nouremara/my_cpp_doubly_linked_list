@@ -4,10 +4,10 @@
 
 /**========================================================================
  * @file        utillist.h
- * @brief       implementation of own string class.
+ * @brief       implementation of own doubly linked list class.
  * @author      Nour Ahmed
  * @email       nahmed@stud.hs-bremen.de, nourbrm02@gmail.com
- * @repo        https://github.com/nouremara/cpp_mystring
+ * @repo        https://github.com/nouremara/my_cpp_doubly_linked_list
  * @createdOn   08.12.2022
  * @version     1.0.0
  * @description implementation of own Doubly Linked List class

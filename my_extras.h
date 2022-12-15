@@ -6,7 +6,7 @@
  * @brief     some extra functions and utilities.
  * @author    Nour Ahmed
  * @email     nahmed@stud.hs-bremen.de, nour
- * @repo      https://github.com/nouremara/cpp_mystring
+ * @repo      https://github.com/nouremara
  * @createdOn 23.11.2022
  * @version   1.0.0
  * @description
@@ -21,11 +21,11 @@
 
 namespace util {
 
-/*=========================================================================*
+    /*=========================================================================*
 	 *      Some Utility functions for printing nice text output               *
 	 *=========================================================================*/
 
-	 /**
+   /**
 	* utility functions for printing nice text output
 	*
 	* ANSI Escape Sequences are used to color the console text,

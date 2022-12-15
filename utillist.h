@@ -4,10 +4,10 @@
 
 /**========================================================================
  * @file        utillist.h
- * @brief       implementation of own string class.
+ * @brief       implementation of own doubly linked list class.
  * @author      Nour Ahmed
  * @email       nahmed@stud.hs-bremen.de, nourbrm02@gmail.com
- * @repo        https://github.com/nouremara/cpp_mystring
+ * @repo        https://github.com/nouremara/my_cpp_doubly_linked_list
  * @createdOn   08.12.2022
  * @version     1.0.0
  * @description implementation of own Doubly Linked List class
@@ -64,14 +64,19 @@ namespace util {
 
 		Node* head, * tail;  // pointers to first and last nodes respectively
 
+		// create a placeholder node after the list tail node
+		// note that the data member of this node is not initialized as it is not needed
+		// this will rersult in an undefined behavior when accessing it (as expected).
+		Node* beyond_tail;
+
 	public:
 		// default constructor creates an empty list
-		list() : head(nullptr), tail(nullptr) {}
+		list() : head(nullptr), tail(nullptr), beyond_tail(nullptr) {}
 
 		// destructor
 		~list();
 
-		list(const list<T>& dll) = delete;
+		list(const list<T>& other_doubly_linked_list) = delete;
 		list& operator=(list const&) = delete;
 
 		// Gives access to the first element of the list
@@ -176,16 +181,11 @@ namespace util {
 		// As this element acts as a placeholder any attempt to access its object 
 		// results in undefined behavior.
 		iterator end() {
-			// create a placeholder node after the list tail node
-			// note that the data member of this node is not initialized as it is not needed
-			// this will rersult in an undefined behavior when accessing it (as expected).
-			Node* beyond_end = new Node();
-
-			beyond_end->prev = tail;
-			//beyond_end->next = beyond_end;
-			tail->next = beyond_end;
-
-			return iterator(beyond_end); 
+			//create a circular link between the the tail and beyond_tail nodes
+			// tail <=> beyond_tail
+			tail->next = beyond_tail;
+		
+			return iterator(beyond_tail); 
 		}
 
 		/**
@@ -194,7 +194,20 @@ namespace util {
 		* added element.
 		*/
 		iterator insert(iterator position, const T& element) {
-			return iterator(head);
+			// check if it is the end iterator 
+			if (position == end()) {
+				push_back(element);
+				return iterator(tail);
+			}
+
+			// create a new node with the contebts given. 
+			// Its next is the current position next node, and
+			// its previous is the node at current position.
+			Node* newNode = new Node(element, position.m_pNode->next, position.m_pNode);
+			if (position.m_pNode == tail) tail = newNode;
+			position.m_pNode->next = newNode;
+			position.m_pNode->next-> prev = newNode;
+			return iterator(newNode);
 		}
 
 		/**
