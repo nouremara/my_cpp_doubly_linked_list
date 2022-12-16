@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['insert_0',['insert',['../dc/d07/classutil_1_1list.html#ab577f446772d90c2b6c85424ad1d5aed',1,'util::list']]],
-  ['iterator_1',['iterator',['../da/d06/classutil_1_1list_1_1iterator.html#a438784658d32428ec05e10c0688f3d72',1,'util::list::iterator::iterator()'],['../da/d06/classutil_1_1list_1_1iterator.html',1,'util::list&lt; T &gt;::iterator']]]
+  ['empty_0',['empty',['../dc/d07/classutil_1_1list.html#ac256ba50a1e1710f40b4e82f2df00bb3',1,'util::list']]],
+  ['end_1',['end',['../dc/d07/classutil_1_1list.html#a3c954bc468c5d82dbc1de212d261b980',1,'util::list']]],
+  ['erase_2',['erase',['../dc/d07/classutil_1_1list.html#aea23f42622a3775a323c3b0687794b26',1,'util::list']]]
 ];

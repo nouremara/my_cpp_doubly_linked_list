@@ -1,0 +1,100 @@
+\begin{quote}
+Implementation of Own Doubly Linked List Class
+
+In this repository, I have an implementation of a class named {\ttfamily \mbox{\hyperlink{classutil_1_1list}{util\+::list}}}. This class behavior is a simplified implementation of the {\ttfamily std\+::list}. Class {\ttfamily list} represents a container which organizes stored objects with a so-\/called doubly linked list. A doubly linked list is basically a list of nodes which are connected among each other. \end{quote}
+The doubly linked list data structure is implemented as shown in the following figure\+:
+
+
+
+For each object that is to be stored, a new node is internally created by class {\ttfamily list}. Besides the object to store, each node has two pointers; {\ttfamily prev} and {\ttfamily next}. {\ttfamily prev} points to the previous node, {\ttfamily next} points to the next node.
+
+The first node ({\ttfamily head}) and last node ({\ttfamily tail}) are special nodes since in these cases {\ttfamily prev} or {\ttfamily next} do not point to a predecessor or successor. When adding the first object to the list, an initial node is being created which represents the first and last node at the same time.
+
+Another special node is the {\ttfamily beyond\+\_\+tail} node. It is a a placeholder node which is the successor of the last node stored in the list. The main purpose of this node is to be used by the method {\ttfamily end()} to return an iterator with it. That is to conform with the STL container conventions that never returns an iterator pointing to a valid (last) object. As this element acts as a placeholder/sentinel, any attempt to access its object results in undefined behavior.
+
+Full and detailed examples of uses and tests of the class {\ttfamily \mbox{\hyperlink{classutil_1_1list}{util\+::list}}} are given in the {\ttfamily \mbox{\hyperlink{main_8cpp}{main.\+cpp}}} file. Each method and operator is very carefully tested (e.\+g., calling pop\+\_\+front() on an empty list, ..., etc.).
+
+An example test run is shown in the following screenshot\+:
+
+
+
+Note that the {\bfseries{terminal output is colored}} (using \href{https://en.wikipedia.org/wiki/ANSI_escape_code}{\texttt{ ANSI escape codes}}) for better visibility.
+
+{\bfseries{Doxygen}} generated documentation (in html and La\+TeX formats) can be found at \href{doc/html/index.html}{\texttt{ {\ttfamily doc/html/index.\+html}}} and \href{doc/latex/refman.pdf}{\texttt{ {\ttfamily doc/latex/refman.\+pdf}}}, respectively. The configuration file {\ttfamily Doxyfile} is used with the Doxygen generation tool.\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{Design and Implementation Criteria\+:}\label{md__r_e_a_d_m_e_autotoc_md3}
+The following design and implementation criteria are followed\+:
+\begin{DoxyItemize}
+\item {\bfseries{No C/\+C++ standard functions or classes are used}} to realize {\ttfamily \mbox{\hyperlink{classutil_1_1list}{util\+::list}}} class. This include, e.\+g., {\ttfamily size()}, {\ttfamily push\+\_\+back()} and of course using {\ttfamily std\+::list} or similar as an internal representation of {\ttfamily \mbox{\hyperlink{classutil_1_1list}{util\+::list}}}.
+\begin{DoxyItemize}
+\item This means own functions/methods are developed and implemented to do all required operations.
+\end{DoxyItemize}
+\item Class {\ttfamily \mbox{\hyperlink{classutil_1_1list}{util\+::list}}} is made generic such that any type can be stored within its nodes. • The class has a {\bfseries{default constructor}} that initializes it to an empty list.
+\item For now, {\bfseries{error handling}} is implemented in a simplified fashion. The {\ttfamily \mbox{\hyperlink{classutil_1_1list}{util\+::list}}} class implements an exception-\/based error handling for various error cases. Example\+: Calling {\ttfamily pop\+\_\+front()} on an empty list shall result in an appropriate exception. Note that some errors may not be handled. This may be done later. {\bfseries{Use this class at your own risk}} \+:).
+\item The code follows \href{https://llvm.org/docs/CodingStandards.html}{\texttt{ LLVM Coding Standards}}.
+\item The {\itshape \href{https://en.wikipedia.org/wiki/Snake_case}{\texttt{ sanke\+\_\+case}}} naming convention is used for variable and function names (with few exceptions).
+\item \+:fire\+: {\bfseries{Use this class at your own risk}} \+:fire\+: \+:).
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{General Functionality}\label{md__r_e_a_d_m_e_autotoc_md4}
+
+\begin{DoxyItemize}
+\item The class {\ttfamily \mbox{\hyperlink{classutil_1_1list}{util\+::list}}} is implemented inside the two files {\ttfamily \mbox{\hyperlink{utillist_8cpp}{utillist.\+cpp}}} and {\ttfamily \mbox{\hyperlink{utillist_8h}{utillist.\+h}}}
+\item Class list is within the namespace {\ttfamily util}.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysection{Iterator Concept}\label{md__r_e_a_d_m_e_autotoc_md5}
+To allow iterating {\ttfamily \mbox{\hyperlink{classutil_1_1list}{util\+::list}}}, a simplified version of the iterator concept is implemented. the class {\ttfamily iterator} as a so-\/called nested class is added to the to the public part of {\ttfamily \mbox{\hyperlink{classutil_1_1list}{util\+::list}}}. THe following functionality is implemented for this {\ttfamily iterator}\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily operator==}\+: Two iterators are equal if they point to the same node
+\item {\ttfamily operator!=}\+: Two iterators are equal if they point to different nodes
+\item {\ttfamily operator++}\+: Point/\+Go to the next node element. Both {\bfseries{prefix and postfix}} variants are supported.
+\item {\ttfamily operator$\ast$}\+: Return a reference to the object stored in the current node
+\item {\ttfamily operator-\/\texorpdfstring{$>$}{>}}\+: Return a pointer to the object stored in the current node
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysection{Constructors}\label{md__r_e_a_d_m_e_autotoc_md6}
+The following constructors are implemented\+:
+\begin{DoxyItemize}
+\item {\ttfamily list()} \+: Default constructor with empty initialization. This {\bfseries{default constructor}} that initializes it to an empty list.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysection{Operators}\label{md__r_e_a_d_m_e_autotoc_md7}
+The following operators are implemented\+:
+\begin{DoxyItemize}
+\item {\ttfamily operator \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}} Streaming operator \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} to print {\ttfamily \mbox{\hyperlink{classutil_1_1list}{util\+::list}}} elements and some information (size) to {\ttfamily std\+::cout}.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysection{Methods}\label{md__r_e_a_d_m_e_autotoc_md8}
+The following methods are implemented\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily T\& front()}\+: Gives access to the first element of the list
+\item {\ttfamily T\& back()}\+: Gives access to the last element of the list
+\item {\ttfamily empty()}\+: Returns true, if the list does not contain elements
+\item {\ttfamily size()}\+: Returns the amount of stored objects
+\item {\ttfamily clear()}\+: Clears the list
+\item {\ttfamily void push\+\_\+back(const T\& element)}\+: Adds element to the end of the list
+\item {\ttfamily void pop\+\_\+back()}\+: Removes the last element from the list
+\item {\ttfamily void push\+\_\+front(const T\& element)}\+: Adds element to the front of the list
+\item {\ttfamily void pop\+\_\+front}\+: Removes the first element from the list
+\item {\ttfamily display()}\+: print the list elements and size to the standard {\ttfamily outstream}
+\item {\ttfamily begin()}\+: Returns an iterator which points to the first element of the list
+\item {\ttfamily end()}\+: Returns a special iterator which points to a placeholder node ({\ttfamily beyond\+\_\+tail}) which is the successor of the last node stored in the list.
+\item {\ttfamily insert(iterator, const Object\& element)}\+: Adds element one position before the object iterator is currently pointing to. Iterator can be the {\ttfamily end()} iterator. Returns an iterator pointing to the newly added element.
+\item {\ttfamily erase(iterator)}\+: Erases the object iterator is currently pointing to. Returns an iterator to the successor of the erased object. iterator must be valid and dereferenceable. For that reason, the {\ttfamily end()} iterator cannot be used as a parameter.
+\end{DoxyItemize}
+
+Notes for the above methods and to follow the spirit of how class std\+::list behavior. \+:
+\begin{DoxyItemize}
+\item {\ttfamily T} represents the actual type, not a node.
+\item when calling {\ttfamily front()} and {\ttfamily back()}, they do not return nodes.
+\item {\ttfamily push\+\_\+front()} or {\ttfamily push\+\_\+back()} do not taking nodes as arguments. They take the actual data element.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysection{Extra Functions and Utilities}\label{md__r_e_a_d_m_e_autotoc_md9}
+Some extra (non-\/member) functions and utilities are implemented (in the header file {\ttfamily \mbox{\hyperlink{my__extras_8h}{my\+\_\+extras.\+h}}}) that help for better functionality and output. These functions are\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily print\+Header(const char$\ast$ text)},\textbackslash{} {\ttfamily print\+Sub\+Header(const char$\ast$ text)},\textbackslash{} {\ttfamily print\+Test\+Case(const char$\ast$ text)} \+: \textbackslash{} To print a nicely formatted and colored text header, sub header, title header, respectively to the terminal
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md10}{}\doxysection{References}\label{md__r_e_a_d_m_e_autotoc_md10}
+
+\begin{DoxyItemize}
+\item Standard list library \+: \href{https://en.cppreference.com/w/cpp/container/list}{\texttt{ https\+://en.\+cppreference.\+com/w/cpp/container/list}}
+\item C++ ISO Standard \href{https://isocpp.org/std/the-standard}{\texttt{ https\+://isocpp.\+org/std/the-\/standard}}
+\item C++ documentation -\/ Dev\+Docs \+: \href{https://devdocs.io/cpp/}{\texttt{ https\+://devdocs.\+io/cpp/}}
+\item LLVM Coding Standards\+: \href{https://llvm.org/docs/CodingStandards.html}{\texttt{ https\+://llvm.\+org/docs/\+Coding\+Standards.\+html}}
+\item sanke\+\_\+case convention \+: \href{https://en.wikipedia.org/wiki/Snake_case}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Snake\+\_\+case}}
+\item Markdown Basic Syntax \+: \href{https://www.markdownguide.org/basic-syntax}{\texttt{ https\+://www.\+markdownguide.\+org/basic-\/syntax}}
+\item Doxygen \+: \href{https://www.doxygen.nl/index.html}{\texttt{ https\+://www.\+doxygen.\+nl/index.\+html}} 
+\end{DoxyItemize}

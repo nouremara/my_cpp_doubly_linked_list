@@ -105,13 +105,13 @@ $(document).ready(function(){initNavTree('d1/d00/my__extras_8h_source.html','../
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="../../d6/d02/namespaceutil.html">   22</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d6/d02/namespaceutil.html">util</a> {</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">/*=========================================================================*</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">     *      Some Utility functions for printing nice text output               *</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">     *=========================================================================*/</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> *      Some Utility functions for printing nice text output               *</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> *=========================================================================*/</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="../../d6/d02/namespaceutil.html#a2d640f1f28221d6aa6b9aacd805125b3">   37</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/d02/namespaceutil.html#a2d640f1f28221d6aa6b9aacd805125b3">printHeader</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* text) {</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">size_t</span> spaces_needed = (80 - std::strlen(text)) / 2 - 2;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;\033[1;30;106m&quot;</span>; <span class="comment">// set text and background colors</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;\033[1;30;106m&quot;</span>;  <span class="comment">// set text and background colors</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;-------------------------------------------------------------------------------\n-&quot;</span>;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; spaces_needed; ++i) {</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        std::cout &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;</div>
@@ -122,26 +122,24 @@ $(document).ready(function(){initNavTree('d1/d00/my__extras_8h_source.html','../
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    std::cout &lt;&lt; <span class="stringliteral">&quot; -\n&quot;</span>;</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;-------------------------------------------------------------------------------\n&quot;</span>;</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;\033[0m\n&quot;</span>; <span class="comment">// reset text and background colors</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;\033[0m\n&quot;</span>;  <span class="comment">// reset text and background colors</span></div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="../../d6/d02/namespaceutil.html#a0cd6dff1a3ac1555425951b35597a45f">   54</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/d02/namespaceutil.html#a0cd6dff1a3ac1555425951b35597a45f">printSubHeader</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* text) {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;\033[32m&quot;</span>; <span class="comment">// set text and background colors</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;\033[32m&quot;</span>;  <span class="comment">// set text and background colors</span></div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    std::cout &lt;&lt; text;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;\033[0m\n&quot;</span>; <span class="comment">// reset text and background colors</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;\033[0m\n&quot;</span>;  <span class="comment">// reset text and background colors</span></div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="../../d6/d02/namespaceutil.html#a106a5b0be34ad130931d45b61cceb6f5">   60</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/d02/namespaceutil.html#a106a5b0be34ad130931d45b61cceb6f5">printTestCase</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* text) {</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;\033[93m  &gt; [&quot;</span>; <span class="comment">// set text and background colors</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;\033[93m  &gt; [&quot;</span>;  <span class="comment">// set text and background colors</span></div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    std::cout &lt;&lt; text;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;]\033[0m \n&quot;</span>; <span class="comment">// reset text and background colors</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;]\033[0m \n&quot;</span>;  <span class="comment">// reset text and background colors</span></div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}  <span class="comment">// namespace util</span></div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>} <span class="comment">// namespace util</span></div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#endif </span><span class="comment">/* MY_EXTRAS_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#endif </span><span class="comment">/* MY_EXTRAS_H */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="anamespaceutil_html"><div class="ttname"><a href="../../d6/d02/namespaceutil.html">util</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d00/my__extras_8h_source.html#l00022">my_extras.h:22</a></div></div>
 <div class="ttc" id="anamespaceutil_html_a0cd6dff1a3ac1555425951b35597a45f"><div class="ttname"><a href="../../d6/d02/namespaceutil.html#a0cd6dff1a3ac1555425951b35597a45f">util::printSubHeader</a></div><div class="ttdeci">void printSubHeader(const char *text)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d00/my__extras_8h_source.html#l00054">my_extras.h:54</a></div></div>
 <div class="ttc" id="anamespaceutil_html_a106a5b0be34ad130931d45b61cceb6f5"><div class="ttname"><a href="../../d6/d02/namespaceutil.html#a106a5b0be34ad130931d45b61cceb6f5">util::printTestCase</a></div><div class="ttdeci">void printTestCase(const char *text)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d00/my__extras_8h_source.html#l00060">my_extras.h:60</a></div></div>

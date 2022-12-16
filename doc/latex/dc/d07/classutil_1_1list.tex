@@ -2,6 +2,11 @@
 \label{classutil_1_1list}\index{util::list$<$ T $>$@{util::list$<$ T $>$}}
 
 
+Implementation of of own doubly linked list class.  
+
+
+
+
 {\ttfamily \#include $<$utillist.\+h$>$}
 
 \doxysubsection*{Classes}
@@ -16,7 +21,7 @@ class \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}}
 \item 
 \mbox{\hyperlink{classutil_1_1list_ab6b706cd4edff5185968fdb935c84ddc}{$\sim$list}} ()
 \item 
-\mbox{\hyperlink{classutil_1_1list_ab27649cee72d09b8757dfdde6b518b67}{list}} (const \mbox{\hyperlink{classutil_1_1list}{list}}$<$ T $>$ \&dll)=delete
+\mbox{\hyperlink{classutil_1_1list_ab6edbfbffbb9bfabd5337a6f40797571}{list}} (const \mbox{\hyperlink{classutil_1_1list}{list}}$<$ T $>$ \&other\+\_\+doubly\+\_\+linked\+\_\+list)=delete
 \item 
 \mbox{\hyperlink{classutil_1_1list}{list}} \& \mbox{\hyperlink{classutil_1_1list_a4a409cb58ce3ea240315129094a394d4}{operator=}} (\mbox{\hyperlink{classutil_1_1list}{list}} const \&)=delete
 \item 
@@ -26,7 +31,7 @@ T \& \mbox{\hyperlink{classutil_1_1list_ad589c3344bbcec29c40042561bce57e6}{back}
 \item 
 void \mbox{\hyperlink{classutil_1_1list_a34564499cb63b820d29c8a4054ae093f}{push\+\_\+front}} (const T \&element)
 \item 
-void \mbox{\hyperlink{classutil_1_1list_a8e4b226b16c012078ebf8bdce9afe76a}{pop\+\_\+front}} ()
+void \mbox{\hyperlink{classutil_1_1list_a8e4b226b16c012078ebf8bdce9afe76a}{pop\+\_\+front}} ()  throw (char$\ast$)
 \item 
 void \mbox{\hyperlink{classutil_1_1list_a85f9138efb4543f32790ec0c03d6d670}{pop\+\_\+back}} ()
 \item 
@@ -36,13 +41,15 @@ void \mbox{\hyperlink{classutil_1_1list_ac6a3cd1d3dce0343ba83b80d085dcae6}{clear
 \item 
 size\+\_\+t \mbox{\hyperlink{classutil_1_1list_ab02a8919139c4189e2e7f392c0c3ffe7}{size}} () const
 \item 
+bool \mbox{\hyperlink{classutil_1_1list_ac256ba50a1e1710f40b4e82f2df00bb3}{empty}} () const
+\item 
 \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list_a22c3d41fe179549677ef2bdf03dcb9d9}{begin}} ()
 \item 
 \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}{end}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a special iterator which points to a placeholder node which is the successor of the last node stored in the list. Calling method \mbox{\hyperlink{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}{end()}} of any STL container never returns an iterator pointing to the last object but an iterator which does not point to a valid object. As this element acts as a placeholder any attempt to access its object results in undefined behavior. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list_ab577f446772d90c2b6c85424ad1d5aed}{insert}} (\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} position, const T \&element)
 \item 
-\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list_aea23f42622a3775a323c3b0687794b26}{erase}} (\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} position)
+\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list_aea23f42622a3775a323c3b0687794b26}{erase}} (\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} position)  throw (char$\ast$)
 \begin{DoxyCompactList}\small\item\em Remove element at given position. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -54,9 +61,15 @@ size\+\_\+t \mbox{\hyperlink{classutil_1_1list_ab02a8919139c4189e2e7f392c0c3ffe7
 \doxysubsection{Detailed Description}
 \subsubsection*{template$<$class T$>$\newline
 class util\+::list$<$ T $>$}
-Class list represents a container which organizes stored objects with a so-\/called doubly linked list. A doubly linked list is basically a list of nodes which are connected among each other 
+Implementation of of own doubly linked list class. 
 
-Definition at line \mbox{\hyperlink{utillist_8h_source_l00039}{39}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+Template to make the list generic such that any type can be stored. T represents the actual type 
+
+This class presents own list class implementation which organizes stored objects with a so-\/called doubly linked list. A doubly linked list is basically a list of nodes which are connected among each other in both directions.
+
+This \mbox{\hyperlink{classutil_1_1list}{util\+::list}} is a container that supports adding, insertion, removal, and moving of elements from anywhere in the container. It provides also bidirectional iteration capability. This class behavior will be similar (but simplified) to the std\+::list. 
+
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00051}{51}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
 
 
 
@@ -68,9 +81,9 @@ Definition at line \mbox{\hyperlink{utillist_8h_source_l00039}{39}} of file \mbo
 {\footnotesize\ttfamily template$<$class T $>$ \\
 \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::list (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+default constructor creates an empty list 
 
-
-Definition at line \mbox{\hyperlink{utillist_8h_source_l00069}{69}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00086}{86}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
 
 \mbox{\Hypertarget{classutil_1_1list_ab6b706cd4edff5185968fdb935c84ddc}\label{classutil_1_1list_ab6b706cd4edff5185968fdb935c84ddc}} 
 \index{util::list$<$ T $>$@{util::list$<$ T $>$}!````~list@{$\sim$list}}
@@ -79,16 +92,16 @@ Definition at line \mbox{\hyperlink{utillist_8h_source_l00069}{69}} of file \mbo
 {\footnotesize\ttfamily template$<$class T $>$ \\
 \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{classutil_1_1list}{list}}}
 
-
+destructor 
 
 Definition at line \mbox{\hyperlink{utillist_8cpp_source_l00030}{30}} of file \mbox{\hyperlink{utillist_8cpp_source}{utillist.\+cpp}}.
 
-\mbox{\Hypertarget{classutil_1_1list_ab27649cee72d09b8757dfdde6b518b67}\label{classutil_1_1list_ab27649cee72d09b8757dfdde6b518b67}} 
+\mbox{\Hypertarget{classutil_1_1list_ab6edbfbffbb9bfabd5337a6f40797571}\label{classutil_1_1list_ab6edbfbffbb9bfabd5337a6f40797571}} 
 \index{util::list$<$ T $>$@{util::list$<$ T $>$}!list@{list}}
 \index{list@{list}!util::list$<$ T $>$@{util::list$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{list()}{list()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-\mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::list (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutil_1_1list}{list}}$<$ T $>$ \&}]{dll }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+\mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::list (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutil_1_1list}{list}}$<$ T $>$ \&}]{other\+\_\+doubly\+\_\+linked\+\_\+list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
 
 
@@ -100,9 +113,9 @@ Definition at line \mbox{\hyperlink{utillist_8cpp_source_l00030}{30}} of file \m
 {\footnotesize\ttfamily template$<$class T $>$ \\
 T \& \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::back (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Gives access to the last element of the list 
 
-
-Definition at line \mbox{\hyperlink{utillist_8h_source_l00081}{81}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00098}{98}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
 
 \mbox{\Hypertarget{classutil_1_1list_a22c3d41fe179549677ef2bdf03dcb9d9}\label{classutil_1_1list_a22c3d41fe179549677ef2bdf03dcb9d9}} 
 \index{util::list$<$ T $>$@{util::list$<$ T $>$}!begin@{begin}}
@@ -111,9 +124,9 @@ Definition at line \mbox{\hyperlink{utillist_8h_source_l00081}{81}} of file \mbo
 {\footnotesize\ttfamily template$<$class T $>$ \\
 \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Returns an iterator which points to the first element of your list. 
 
-
-Definition at line \mbox{\hyperlink{utillist_8h_source_l00170}{170}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00190}{190}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
 
 \mbox{\Hypertarget{classutil_1_1list_ac6a3cd1d3dce0343ba83b80d085dcae6}\label{classutil_1_1list_ac6a3cd1d3dce0343ba83b80d085dcae6}} 
 \index{util::list$<$ T $>$@{util::list$<$ T $>$}!clear@{clear}}
@@ -122,9 +135,20 @@ Definition at line \mbox{\hyperlink{utillist_8h_source_l00170}{170}} of file \mb
 {\footnotesize\ttfamily template$<$class T $>$ \\
 void \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::clear}
 
+Clears the list 
 
+Definition at line \mbox{\hyperlink{utillist_8cpp_source_l00101}{101}} of file \mbox{\hyperlink{utillist_8cpp_source}{utillist.\+cpp}}.
 
-Definition at line \mbox{\hyperlink{utillist_8cpp_source_l00094}{94}} of file \mbox{\hyperlink{utillist_8cpp_source}{utillist.\+cpp}}.
+\mbox{\Hypertarget{classutil_1_1list_ac256ba50a1e1710f40b4e82f2df00bb3}\label{classutil_1_1list_ac256ba50a1e1710f40b4e82f2df00bb3}} 
+\index{util::list$<$ T $>$@{util::list$<$ T $>$}!empty@{empty}}
+\index{empty@{empty}!util::list$<$ T $>$@{util::list$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true, if the list does not contain elements 
+
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00141}{141}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
 
 \mbox{\Hypertarget{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}\label{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}} 
 \index{util::list$<$ T $>$@{util::list$<$ T $>$}!end@{end}}
@@ -135,14 +159,18 @@ Definition at line \mbox{\hyperlink{utillist_8cpp_source_l00094}{94}} of file \m
 
 
 
-Definition at line \mbox{\hyperlink{utillist_8h_source_l00178}{178}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+Returns a special iterator which points to a placeholder node which is the successor of the last node stored in the list. Calling method \mbox{\hyperlink{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}{end()}} of any STL container never returns an iterator pointing to the last object but an iterator which does not point to a valid object. As this element acts as a placeholder any attempt to access its object results in undefined behavior. 
+
+
+
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00200}{200}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
 
 \mbox{\Hypertarget{classutil_1_1list_aea23f42622a3775a323c3b0687794b26}\label{classutil_1_1list_aea23f42622a3775a323c3b0687794b26}} 
 \index{util::list$<$ T $>$@{util::list$<$ T $>$}!erase@{erase}}
 \index{erase@{erase}!util::list$<$ T $>$@{util::list$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{erase()}{erase()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}}}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::erase (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}}}]{position }\end{DoxyParamCaption}) throw ( char $\ast$) \hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -150,7 +178,7 @@ Remove element at given position.
 
 
 \begin{DoxyParams}{Parameters}
-{\em position} & Iterator pointing to element to be erased. Iterator must be valid and de-\/referenceable. For that reason, the \mbox{\hyperlink{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}{end()}} iterator cannot be used as a parameter. \\
+{\em position} & Iterator pointing to element to be erased. Iterator must be valid and de-\/referencible. For that reason, the \mbox{\hyperlink{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}{end()}} iterator cannot be used as a parameter. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -158,7 +186,7 @@ An iterator pointing to the next element (the successor of the erased object) or
 \end{DoxyReturn}
 @description This function will erase the element at the given position and thus shorten the list by one. 
 
-Definition at line \mbox{\hyperlink{utillist_8h_source_l00213}{213}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00245}{245}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
 
 \mbox{\Hypertarget{classutil_1_1list_a6de8a701d5cdacd2ab8bddf261bb4661}\label{classutil_1_1list_a6de8a701d5cdacd2ab8bddf261bb4661}} 
 \index{util::list$<$ T $>$@{util::list$<$ T $>$}!front@{front}}
@@ -167,9 +195,9 @@ Definition at line \mbox{\hyperlink{utillist_8h_source_l00213}{213}} of file \mb
 {\footnotesize\ttfamily template$<$class T $>$ \\
 T \& \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::front (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Gives access to the first element of the list 
 
-
-Definition at line \mbox{\hyperlink{utillist_8h_source_l00078}{78}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00095}{95}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
 
 \mbox{\Hypertarget{classutil_1_1list_ab577f446772d90c2b6c85424ad1d5aed}\label{classutil_1_1list_ab577f446772d90c2b6c85424ad1d5aed}} 
 \index{util::list$<$ T $>$@{util::list$<$ T $>$}!insert@{insert}}
@@ -178,9 +206,9 @@ Definition at line \mbox{\hyperlink{utillist_8h_source_l00078}{78}} of file \mbo
 {\footnotesize\ttfamily template$<$class T $>$ \\
 \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}}}]{position,  }\item[{const T \&}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Adds element one position before the object iterator is currently pointing to. iterator may be the \mbox{\hyperlink{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}{end()}} iterator. Returns an iterator pointing to the newly added element. 
+Adds element one position before the object iterator is currently pointing to. iterator may be the \mbox{\hyperlink{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}{end()}} iterator. Returns an iterator pointing to the newly added element. create a new node with the contents given. Its next is the current position next node, and its previous is the node at current position.
 
-Definition at line \mbox{\hyperlink{utillist_8h_source_l00196}{196}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00213}{213}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
 
 \mbox{\Hypertarget{classutil_1_1list_a4a409cb58ce3ea240315129094a394d4}\label{classutil_1_1list_a4a409cb58ce3ea240315129094a394d4}} 
 \index{util::list$<$ T $>$@{util::list$<$ T $>$}!operator=@{operator=}}
@@ -196,16 +224,16 @@ Definition at line \mbox{\hyperlink{utillist_8h_source_l00196}{196}} of file \mb
 {\footnotesize\ttfamily template$<$class T $>$ \\
 void \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::pop\+\_\+back}
 
+removes the last element from the list 
 
-
-Definition at line \mbox{\hyperlink{utillist_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{utillist_8cpp_source}{utillist.\+cpp}}.
+Definition at line \mbox{\hyperlink{utillist_8cpp_source_l00080}{80}} of file \mbox{\hyperlink{utillist_8cpp_source}{utillist.\+cpp}}.
 
 \mbox{\Hypertarget{classutil_1_1list_a8e4b226b16c012078ebf8bdce9afe76a}\label{classutil_1_1list_a8e4b226b16c012078ebf8bdce9afe76a}} 
 \index{util::list$<$ T $>$@{util::list$<$ T $>$}!pop\_front@{pop\_front}}
 \index{pop\_front@{pop\_front}!util::list$<$ T $>$@{util::list$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{pop\_front()}{pop\_front()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
-void \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::pop\+\_\+front}
+void \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::pop\+\_\+front throw ( char $\ast$) }
 
 
 
@@ -218,9 +246,9 @@ Definition at line \mbox{\hyperlink{utillist_8cpp_source_l00041}{41}} of file \m
 {\footnotesize\ttfamily template$<$class T $>$ \\
 void \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::push\+\_\+back (\begin{DoxyParamCaption}\item[{const T \&}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Adds element to the end of the list 
 
-
-Definition at line \mbox{\hyperlink{utillist_8h_source_l00104}{104}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00121}{121}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
 
 \mbox{\Hypertarget{classutil_1_1list_a34564499cb63b820d29c8a4054ae093f}\label{classutil_1_1list_a34564499cb63b820d29c8a4054ae093f}} 
 \index{util::list$<$ T $>$@{util::list$<$ T $>$}!push\_front@{push\_front}}
@@ -229,9 +257,9 @@ Definition at line \mbox{\hyperlink{utillist_8h_source_l00104}{104}} of file \mb
 {\footnotesize\ttfamily template$<$class T $>$ \\
 void \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::push\+\_\+front (\begin{DoxyParamCaption}\item[{const T \&}]{element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+Adds element to the front of the list 
 
-
-Definition at line \mbox{\hyperlink{utillist_8h_source_l00084}{84}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00101}{101}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
 
 \mbox{\Hypertarget{classutil_1_1list_ab02a8919139c4189e2e7f392c0c3ffe7}\label{classutil_1_1list_ab02a8919139c4189e2e7f392c0c3ffe7}} 
 \index{util::list$<$ T $>$@{util::list$<$ T $>$}!size@{size}}
@@ -240,9 +268,9 @@ Definition at line \mbox{\hyperlink{utillist_8h_source_l00084}{84}} of file \mbo
 {\footnotesize\ttfamily template$<$class T $>$ \\
 size\+\_\+t \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::size}
 
+Returns the amount of stored objects 
 
-
-Definition at line \mbox{\hyperlink{utillist_8cpp_source_l00108}{108}} of file \mbox{\hyperlink{utillist_8cpp_source}{utillist.\+cpp}}.
+Definition at line \mbox{\hyperlink{utillist_8cpp_source_l00115}{115}} of file \mbox{\hyperlink{utillist_8cpp_source}{utillist.\+cpp}}.
 
 
 
@@ -257,7 +285,7 @@ std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream 
 
 
 
-Definition at line \mbox{\hyperlink{utillist_8cpp_source_l00140}{140}} of file \mbox{\hyperlink{utillist_8cpp_source}{utillist.\+cpp}}.
+Definition at line \mbox{\hyperlink{utillist_8cpp_source_l00147}{147}} of file \mbox{\hyperlink{utillist_8cpp_source}{utillist.\+cpp}}.
 
 
 

@@ -94,7 +94,101 @@ $(document).ready(function(){initNavTree('d3/d04/md__r_e_a_d_m_e.html','../../')
   <div class="headertitle"><div class="title">my_cpp_doubly_linked_list </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"></div></div><!-- contents -->
+<div class="textblock"><blockquote class="doxtable">
+<p >&zwj;Implementation of Own Doubly Linked List Class</p>
+<p >In this repository, I have an implementation of a class named <code><a class="el" href="../../dc/d07/classutil_1_1list.html" title="Implementation of of own doubly linked list class.">util::list</a></code>. This class behavior is a simplified implementation of the <code>std::list</code>. Class <code>list</code> represents a container which organizes stored objects with a so-called doubly linked list. A doubly linked list is basically a list of nodes which are connected among each other. </p>
+</blockquote>
+<p>The doubly linked list data structure is implemented as shown in the following figure:</p>
+<p ><img src="../../doc/figures/DoublyLinkedList.png" alt="Doubly Linked List Implementation" class="inline"/></p>
+<p >For each object that is to be stored, a new node is internally created by class <code>list</code>. Besides the object to store, each node has two pointers; <code>prev</code> and <code>next</code>. <code>prev</code> points to the previous node, <code>next</code> points to the next node.</p>
+<p >The first node (<code>head</code>) and last node (<code>tail</code>) are special nodes since in these cases <code>prev</code> or <code>next</code> do not point to a predecessor or successor. When adding the first object to the list, an initial node is being created which represents the first and last node at the same time.</p>
+<p >Another special node is the <code>beyond_tail</code> node. It is a a placeholder node which is the successor of the last node stored in the list. The main purpose of this node is to be used by the method <code>end()</code> to return an iterator with it. That is to conform with the STL container conventions that never returns an iterator pointing to a valid (last) object. As this element acts as a placeholder/sentinel, any attempt to access its object results in undefined behavior.</p>
+<p >Full and detailed examples of uses and tests of the class <code><a class="el" href="../../dc/d07/classutil_1_1list.html" title="Implementation of of own doubly linked list class.">util::list</a></code> are given in the <code><a class="el" href="../../df/d02/main_8cpp.html" title=": test of own implementation of list class">main.cpp</a></code> file. Each method and operator is very carefully tested (e.g., calling pop_front() on an empty list, ..., etc.).</p>
+<p >An example test run is shown in the following screenshot:</p>
+<p ><img src="../../doc/figures/screenshot.png" alt="fishy" width="400px" class="inline"/></p>
+<p >Note that the <b>terminal output is colored</b> (using <a href="https://en.wikipedia.org/wiki/ANSI_escape_code">ANSI escape codes</a>) for better visibility.</p>
+<p ><b>Doxygen</b> generated documentation (in html and LaTeX formats) can be found at <a href="../../doc/html/index.html"><code>doc/html/index.html</code></a> and <a href="../../doc/latex/refman.pdf"><code>doc/latex/refman.pdf</code></a>, respectively. The configuration file <code>Doxyfile</code> is used with the Doxygen generation tool.</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Design and Implementation Criteria:</h1>
+<p >The following design and implementation criteria are followed:</p><ul>
+<li><b>No C/C++ standard functions or classes are used</b> to realize <code><a class="el" href="../../dc/d07/classutil_1_1list.html" title="Implementation of of own doubly linked list class.">util::list</a></code> class. This include, e.g., <code>size()</code>, <code>push_back()</code> and of course using <code>std::list</code> or similar as an internal representation of <code><a class="el" href="../../dc/d07/classutil_1_1list.html" title="Implementation of of own doubly linked list class.">util::list</a></code>.<ul>
+<li>This means own functions/methods are developed and implemented to do all required operations.</li>
+</ul>
+</li>
+<li>Class <code><a class="el" href="../../dc/d07/classutil_1_1list.html" title="Implementation of of own doubly linked list class.">util::list</a></code> is made generic such that any type can be stored within its nodes. • The class has a <b>default constructor</b> that initializes it to an empty list.</li>
+<li>For now, <b>error handling</b> is implemented in a simplified fashion. The <code><a class="el" href="../../dc/d07/classutil_1_1list.html" title="Implementation of of own doubly linked list class.">util::list</a></code> class implements an exception-based error handling for various error cases. Example: Calling <code>pop_front()</code> on an empty list shall result in an appropriate exception. Note that some errors may not be handled. This may be done later. <b>Use this class at your own risk</b> :).</li>
+<li>The code follows <a href="https://llvm.org/docs/CodingStandards.html">LLVM Coding Standards</a>.</li>
+<li>The <em><a href="https://en.wikipedia.org/wiki/Snake_case">sanke_case</a></em> naming convention is used for variable and function names (with few exceptions).</li>
+<li>:fire: <b>Use this class at your own risk</b> :fire: :).</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md4"></a>
+General Functionality</h1>
+<ul>
+<li>The class <code><a class="el" href="../../dc/d07/classutil_1_1list.html" title="Implementation of of own doubly linked list class.">util::list</a></code> is implemented inside the two files <code><a class="el" href="../../df/d02/utillist_8cpp.html">utillist.cpp</a></code> and <code><a class="el" href="../../da/d02/utillist_8h.html" title="implementation of own doubly linked list class.">utillist.h</a></code></li>
+<li>Class list is within the namespace <code>util</code>.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md5"></a>
+Iterator Concept</h1>
+<p >To allow iterating <code><a class="el" href="../../dc/d07/classutil_1_1list.html" title="Implementation of of own doubly linked list class.">util::list</a></code>, a simplified version of the iterator concept is implemented. the class <code>iterator</code> as a so-called nested class is added to the to the public part of <code><a class="el" href="../../dc/d07/classutil_1_1list.html" title="Implementation of of own doubly linked list class.">util::list</a></code>. THe following functionality is implemented for this <code>iterator</code>:</p>
+<ul>
+<li><code>operator==</code>: Two iterators are equal if they point to the same node</li>
+<li><code>operator!=</code>: Two iterators are equal if they point to different nodes</li>
+<li><code>operator++</code>: Point/Go to the next node element. Both <b>prefix and postfix</b> variants are supported.</li>
+<li><code>operator*</code>: Return a reference to the object stored in the current node</li>
+<li><code>operator-&gt;</code>: Return a pointer to the object stored in the current node</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Constructors</h1>
+<p >The following constructors are implemented:</p><ul>
+<li><code>list()</code> : Default constructor with empty initialization. This <b>default constructor</b> that initializes it to an empty list.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md7"></a>
+Operators</h1>
+<p >The following operators are implemented:</p><ul>
+<li><code>operator &lt;&lt;</code> Streaming operator &lt;&lt; to print <code><a class="el" href="../../dc/d07/classutil_1_1list.html" title="Implementation of of own doubly linked list class.">util::list</a></code> elements and some information (size) to <code>std::cout</code>.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md8"></a>
+Methods</h1>
+<p >The following methods are implemented:</p>
+<ul>
+<li><code>T&amp; front()</code>: Gives access to the first element of the list</li>
+<li><code>T&amp; back()</code>: Gives access to the last element of the list</li>
+<li><code>empty()</code>: Returns true, if the list does not contain elements</li>
+<li><code>size()</code>: Returns the amount of stored objects</li>
+<li><code>clear()</code>: Clears the list</li>
+<li><code>void push_back(const T&amp; element)</code>: Adds element to the end of the list</li>
+<li><code>void pop_back()</code>: Removes the last element from the list</li>
+<li><code>void push_front(const T&amp; element)</code>: Adds element to the front of the list</li>
+<li><code>void pop_front</code>: Removes the first element from the list</li>
+<li><code>display()</code>: print the list elements and size to the standard <code>outstream</code></li>
+<li><code>begin()</code>: Returns an iterator which points to the first element of the list</li>
+<li><code>end()</code>: Returns a special iterator which points to a placeholder node (<code>beyond_tail</code>) which is the successor of the last node stored in the list.</li>
+<li><code>insert(iterator, const Object&amp; element)</code>: Adds element one position before the object iterator is currently pointing to. Iterator can be the <code>end()</code> iterator. Returns an iterator pointing to the newly added element.</li>
+<li><code>erase(iterator)</code>: Erases the object iterator is currently pointing to. Returns an iterator to the successor of the erased object. iterator must be valid and dereferenceable. For that reason, the <code>end()</code> iterator cannot be used as a parameter.</li>
+</ul>
+<p >Notes for the above methods and to follow the spirit of how class std::list behavior. :</p><ul>
+<li><code>T</code> represents the actual type, not a node.</li>
+<li>when calling <code>front()</code> and <code>back()</code>, they do not return nodes.</li>
+<li><code>push_front()</code> or <code>push_back()</code> do not taking nodes as arguments. They take the actual data element.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Extra Functions and Utilities</h1>
+<p >Some extra (non-member) functions and utilities are implemented (in the header file <code><a class="el" href="../../d1/d00/my__extras_8h.html" title="some extra functions and utilities.">my_extras.h</a></code>) that help for better functionality and output. These functions are:</p>
+<ul>
+<li><code>printHeader(const char* text)</code>,\ <code>printSubHeader(const char* text)</code>,\ <code>printTestCase(const char* text)</code> : \ To print a nicely formatted and colored text header, sub header, title header, respectively to the terminal</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md10"></a>
+References</h1>
+<ul>
+<li>Standard list library : <a href="https://en.cppreference.com/w/cpp/container/list">https://en.cppreference.com/w/cpp/container/list</a></li>
+<li>C++ ISO Standard <a href="https://isocpp.org/std/the-standard">https://isocpp.org/std/the-standard</a></li>
+<li>C++ documentation - DevDocs : <a href="https://devdocs.io/cpp/">https://devdocs.io/cpp/</a></li>
+<li>LLVM Coding Standards: <a href="https://llvm.org/docs/CodingStandards.html">https://llvm.org/docs/CodingStandards.html</a></li>
+<li>sanke_case convention : <a href="https://en.wikipedia.org/wiki/Snake_case">https://en.wikipedia.org/wiki/Snake_case</a></li>
+<li>Markdown Basic Syntax : <a href="https://www.markdownguide.org/basic-syntax">https://www.markdownguide.org/basic-syntax</a></li>
+<li>Doxygen : <a href="https://www.doxygen.nl/index.html">https://www.doxygen.nl/index.html</a> </li>
+</ul>
+</div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->

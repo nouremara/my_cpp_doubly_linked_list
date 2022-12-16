@@ -10,186 +10,164 @@
 \DoxyCodeLine{\Hypertarget{utillist_8h_source_l00025}00025 }
 \DoxyCodeLine{\Hypertarget{utillist_8h_source_l00026}00026 \textcolor{preprocessor}{\#include <iostream>}}
 \DoxyCodeLine{\Hypertarget{utillist_8h_source_l00027}00027 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00028}00028  \textcolor{comment}{// namespace util to contain the Class list}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00029}00029 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceutil}{util}} \{}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00036}00036     \textcolor{keyword}{template} <\textcolor{keyword}{class} T>  \textcolor{comment}{// Template to make the list generic such that any type}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00037}00037                         \textcolor{comment}{// can be stored.}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00038}00038                         \textcolor{comment}{// T represents the actual type}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00039}\mbox{\hyperlink{classutil_1_1list}{00039}}     \textcolor{keyword}{class }\mbox{\hyperlink{classutil_1_1list}{list}} \{}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00040}00040         }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00047}00047         \textcolor{keyword}{struct }Node \{}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00048}00048             T data;      \textcolor{comment}{// date element (object type) to store in the node}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00049}00049             Node* prev;  \textcolor{comment}{// pointer to predecessor node}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00050}00050             Node* next;  \textcolor{comment}{// pointer to successor node}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00051}00051 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00052}00052             \textcolor{comment}{//default constructor create a stand-\/alone node.}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00053}00053             Node() : next(\textcolor{keyword}{nullptr}), prev(\textcolor{keyword}{nullptr})\{\}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00054}00054 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00055}00055             \textcolor{comment}{// constructor of the node}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00056}00056             \textcolor{comment}{// fills the data element}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00057}00057             \textcolor{comment}{// unset its predecessor and successor node pointers}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00058}00058             \textcolor{comment}{// as they will be adjusted later}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00059}00059             Node(\textcolor{keyword}{const} T\& element, Node* next\_node\_ptr = \textcolor{keyword}{nullptr}, Node* prev\_node\_ptr = \textcolor{keyword}{nullptr})}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00060}00060                 : next(next\_node\_ptr), }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00061}00061                   prev(prev\_node\_ptr), }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00062}00062                   data(element) \{\}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00063}00063         \};}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00064}00064 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00065}00065         Node* head, * tail;  \textcolor{comment}{// pointers to first and last nodes respectively}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00066}00066 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00067}00067     \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00068}00068         \textcolor{comment}{// default constructor creates an empty list}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00069}\mbox{\hyperlink{classutil_1_1list_a8454da40e36f0d44cb989d32649f811a}{00069}}         \mbox{\hyperlink{classutil_1_1list_a8454da40e36f0d44cb989d32649f811a}{list}}() : head(nullptr), tail(nullptr) \{\}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00070}00070 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00071}00071         \textcolor{comment}{// destructor}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00072}00072         \mbox{\hyperlink{classutil_1_1list_ab6b706cd4edff5185968fdb935c84ddc}{\string~list}}();}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00073}00073 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00074}\mbox{\hyperlink{classutil_1_1list_ab27649cee72d09b8757dfdde6b518b67}{00074}}         \mbox{\hyperlink{classutil_1_1list_ab27649cee72d09b8757dfdde6b518b67}{list}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1list}{list<T>}}\& dll) = \textcolor{keyword}{delete};}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00075}\mbox{\hyperlink{classutil_1_1list_a4a409cb58ce3ea240315129094a394d4}{00075}}         \mbox{\hyperlink{classutil_1_1list}{list}}\& \mbox{\hyperlink{classutil_1_1list_a4a409cb58ce3ea240315129094a394d4}{operator=}}(\mbox{\hyperlink{classutil_1_1list}{list}} \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete};}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00076}00076 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00077}00077         \textcolor{comment}{// Gives access to the first element of the list}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00078}\mbox{\hyperlink{classutil_1_1list_a6de8a701d5cdacd2ab8bddf261bb4661}{00078}}         T\& \mbox{\hyperlink{classutil_1_1list_a6de8a701d5cdacd2ab8bddf261bb4661}{front}}() \{ \textcolor{keywordflow}{return} head-\/>data; \}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00079}00079 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00080}00080         \textcolor{comment}{// Gives access to the last element of the list}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00081}\mbox{\hyperlink{classutil_1_1list_ad589c3344bbcec29c40042561bce57e6}{00081}}         T\& \mbox{\hyperlink{classutil_1_1list_ad589c3344bbcec29c40042561bce57e6}{back}}() \{ \textcolor{keywordflow}{return} tail-\/>data; \}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00082}00082 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00083}00083         \textcolor{comment}{// Adds element to the front of the list}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00084}\mbox{\hyperlink{classutil_1_1list_a34564499cb63b820d29c8a4054ae093f}{00084}}         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1list_a34564499cb63b820d29c8a4054ae093f}{push\_front}}(\textcolor{keyword}{const} T\& element) \{}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00085}00085             Node* node = \textcolor{keyword}{new} Node(element);}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00086}00086 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00087}00087             \textcolor{keywordflow}{if} (head == \textcolor{keyword}{nullptr}) \{}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00088}00088                 head = node;}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00089}00089                 tail = head;}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00090}00090                 \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00091}00091             \}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00092}00092 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00093}00093             head-\/>prev = node;}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00094}00094             node-\/>next = head;}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00095}00095             head = node;}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00096}00096         \}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00097}00097 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00098}00098         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1list_a8e4b226b16c012078ebf8bdce9afe76a}{pop\_front}}();}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00031}00031 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceutil}{util}} \{}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00037}00037 \textcolor{keyword}{template} <\textcolor{keyword}{class} T>}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00051}\mbox{\hyperlink{classutil_1_1list}{00051}} \textcolor{keyword}{class }\mbox{\hyperlink{classutil_1_1list}{list}} \{}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00058}00058     \textcolor{keyword}{struct }Node \{}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00059}00059         T data;      }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00060}00060         Node* prev;  }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00061}00061         Node* next;  }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00062}00062 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00064}00064         Node() : next(\textcolor{keyword}{nullptr}), prev(\textcolor{keyword}{nullptr}) \{\}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00070}00070         Node(\textcolor{keyword}{const} T\& element, Node* next\_node\_ptr = \textcolor{keyword}{nullptr}, Node* prev\_node\_ptr = \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00071}00071             : next(next\_node\_ptr),}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00072}00072               prev(prev\_node\_ptr),}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00073}00073               data(element) \{\}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00074}00074     \};}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00076}00076     Node *head, *tail;  }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00082}00082     Node* beyond\_tail;}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00084}00084    \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00086}\mbox{\hyperlink{classutil_1_1list_a8454da40e36f0d44cb989d32649f811a}{00086}}     \mbox{\hyperlink{classutil_1_1list_a8454da40e36f0d44cb989d32649f811a}{list}}() : head(nullptr), tail(nullptr), beyond\_tail(nullptr) \{\}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00087}00087 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00089}00089     \mbox{\hyperlink{classutil_1_1list_ab6b706cd4edff5185968fdb935c84ddc}{\string~list}}();}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00091}\mbox{\hyperlink{classutil_1_1list_ab6edbfbffbb9bfabd5337a6f40797571}{00091}}     \mbox{\hyperlink{classutil_1_1list_ab6edbfbffbb9bfabd5337a6f40797571}{list}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1list}{list<T>}}\& other\_doubly\_linked\_list) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00092}\mbox{\hyperlink{classutil_1_1list_a4a409cb58ce3ea240315129094a394d4}{00092}}     \mbox{\hyperlink{classutil_1_1list}{list}}\& \mbox{\hyperlink{classutil_1_1list_a4a409cb58ce3ea240315129094a394d4}{operator=}}(\mbox{\hyperlink{classutil_1_1list}{list}} \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00095}\mbox{\hyperlink{classutil_1_1list_a6de8a701d5cdacd2ab8bddf261bb4661}{00095}}     T\& \mbox{\hyperlink{classutil_1_1list_a6de8a701d5cdacd2ab8bddf261bb4661}{front}}() \{ \textcolor{keywordflow}{return} head-\/>data; \}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00098}\mbox{\hyperlink{classutil_1_1list_ad589c3344bbcec29c40042561bce57e6}{00098}}     T\& \mbox{\hyperlink{classutil_1_1list_ad589c3344bbcec29c40042561bce57e6}{back}}() \{ \textcolor{keywordflow}{return} tail-\/>data; \}}
 \DoxyCodeLine{\Hypertarget{utillist_8h_source_l00099}00099 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00100}00100         \textcolor{comment}{// removes the last element from the list}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00101}00101         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1list_a85f9138efb4543f32790ec0c03d6d670}{pop\_back}}();}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00102}00102 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00103}00103         \textcolor{comment}{// Adds element to the end of the list}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00104}\mbox{\hyperlink{classutil_1_1list_a8cd44954211aebb4131caaa058085421}{00104}}         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1list_a8cd44954211aebb4131caaa058085421}{push\_back}}(\textcolor{keyword}{const} T\& element) \{}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00105}00105             Node* node = \textcolor{keyword}{new} Node(element);}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00106}00106             \textcolor{keywordflow}{if} (tail == \textcolor{keyword}{nullptr}) \{}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00107}00107                 tail = node;}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00108}00108                 head = tail;}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00109}00109                 \textcolor{keywordflow}{return};}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00110}00110             \}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00111}00111 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00112}00112             tail-\/>next = node;}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00113}00113             node-\/>prev = tail;}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00114}00114             tail = node;}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00115}00115         \}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00101}\mbox{\hyperlink{classutil_1_1list_a34564499cb63b820d29c8a4054ae093f}{00101}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1list_a34564499cb63b820d29c8a4054ae093f}{push\_front}}(\textcolor{keyword}{const} T\& element) \{}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00102}00102         Node* node = \textcolor{keyword}{new} Node(element);}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00104}00104         \textcolor{keywordflow}{if} (head == \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00105}00105             head = node;}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00106}00106             tail = head;}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00107}00107             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00108}00108         \}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00110}00110         head-\/>prev = node;}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00111}00111         node-\/>next = head;}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00112}00112         head = node;}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00113}00113     \}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00115}00115     \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1list_a8e4b226b16c012078ebf8bdce9afe76a}{pop\_front}}() throw(\textcolor{keywordtype}{char}*);}
 \DoxyCodeLine{\Hypertarget{utillist_8h_source_l00116}00116 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00117}00117         \textcolor{comment}{// Clears the list}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00118}00118         \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1list_ac6a3cd1d3dce0343ba83b80d085dcae6}{clear}}();}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00118}00118     \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1list_a85f9138efb4543f32790ec0c03d6d670}{pop\_back}}();}
 \DoxyCodeLine{\Hypertarget{utillist_8h_source_l00119}00119 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00120}00120         \textcolor{comment}{// Returns the amount of stored objects}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00121}00121         \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classutil_1_1list_ab02a8919139c4189e2e7f392c0c3ffe7}{size}}() \textcolor{keyword}{const};}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00122}00122 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00123}00123         \textcolor{keyword}{template} <\textcolor{keyword}{class} U>}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00124}00124         \textcolor{keyword}{friend} std::ostream\& \mbox{\hyperlink{classutil_1_1list_ac898f0dde3343ae7f045c219e47a2191}{operator<<}}(std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1list}{list<U>}}\& theList);}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00125}00125 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00126}00126     \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00127}00127         \textcolor{keywordtype}{void} display(std::ostream\& out = std::cout) \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00121}\mbox{\hyperlink{classutil_1_1list_a8cd44954211aebb4131caaa058085421}{00121}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1list_a8cd44954211aebb4131caaa058085421}{push\_back}}(const T\& element) \{}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00122}00122         Node* node = \textcolor{keyword}{new} Node(element);}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00123}00123         \textcolor{keywordflow}{if} (tail == \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00124}00124             tail = node;}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00125}00125             head = tail;}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00126}00126             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00127}00127         \}}
 \DoxyCodeLine{\Hypertarget{utillist_8h_source_l00128}00128 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00129}00129 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00130}00130 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00131}00131     \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00132}00132         \textcolor{comment}{// To allow iterating your list, a simplified version of the iterator }}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00133}00133         \textcolor{comment}{// concept is implemented as a nested class}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00134}\mbox{\hyperlink{classutil_1_1list_1_1iterator}{00134}}         \textcolor{keyword}{class }\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \{}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00135}\mbox{\hyperlink{classutil_1_1list_1_1iterator_a39e8296e3b93358d0af90000b5d9113c}{00135}}             \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classutil_1_1list}{list}};}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00129}00129         tail-\/>next = node;}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00130}00130         node-\/>prev = tail;}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00131}00131         tail = node;}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00132}00132     \}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00133}00133 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00135}00135     \textcolor{keywordtype}{void} \mbox{\hyperlink{classutil_1_1list_ac6a3cd1d3dce0343ba83b80d085dcae6}{clear}}();}
 \DoxyCodeLine{\Hypertarget{utillist_8h_source_l00136}00136 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00137}00137             Node* m\_pNode;}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00138}00138         \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00139}\mbox{\hyperlink{classutil_1_1list_1_1iterator_a438784658d32428ec05e10c0688f3d72}{00139}}             \mbox{\hyperlink{classutil_1_1list_1_1iterator_a438784658d32428ec05e10c0688f3d72}{iterator}}(Node* pNode) : m\_pNode(pNode) \{ \}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00140}00140 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00141}00141             \textcolor{comment}{// Two iterators are equal if they point to the same node}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00142}\mbox{\hyperlink{classutil_1_1list_1_1iterator_a95bb1dba5eb891ed4b6cfa2e6b5d2a5d}{00142}}             \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classutil_1_1list_1_1iterator_a95bb1dba5eb891ed4b6cfa2e6b5d2a5d}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}}\& it)\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} this-\/>m\_pNode == it.m\_pNode;\}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00143}\mbox{\hyperlink{classutil_1_1list_1_1iterator_ae9dc10de8430253579e2932b06d66340}{00143}}             \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classutil_1_1list_1_1iterator_ae9dc10de8430253579e2932b06d66340}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}}\& it)\textcolor{keyword}{ const }\{\textcolor{keywordflow}{return} this-\/>m\_pNode != it.m\_pNode;\}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00144}00144 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00145}\mbox{\hyperlink{classutil_1_1list_1_1iterator_ae46f69d8aa62dcf266c3be3e1fc9bb46}{00145}}             \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}}\& \mbox{\hyperlink{classutil_1_1list_1_1iterator_ae46f69d8aa62dcf266c3be3e1fc9bb46}{operator++}}() \{}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00146}00146                 \textcolor{comment}{// Point/Go to the next value of m\_pNode}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00147}00147                 m\_pNode = \textcolor{keyword}{static\_cast<}Node*\textcolor{keyword}{>}(m\_pNode)-\/>next;}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00148}00148                 \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00149}00149             \}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00150}00150 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00151}\mbox{\hyperlink{classutil_1_1list_1_1iterator_a748d9ff17ee9b5ca603d37e9109e5010}{00151}}             \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list_1_1iterator_a748d9ff17ee9b5ca603d37e9109e5010}{operator++}}(\textcolor{keywordtype}{int}) \{}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00152}00152                 \textcolor{comment}{// Postfix variant}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00153}00153                 \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} tmp(*\textcolor{keyword}{this});}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00154}00154                 ++*\textcolor{keyword}{this};}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00155}00155                 \textcolor{keywordflow}{return} tmp;}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00156}00156             \}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00138}00138     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{classutil_1_1list_ab02a8919139c4189e2e7f392c0c3ffe7}{size}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00139}00139 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00141}\mbox{\hyperlink{classutil_1_1list_ac256ba50a1e1710f40b4e82f2df00bb3}{00141}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{classutil_1_1list_ac256ba50a1e1710f40b4e82f2df00bb3}{empty}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classutil_1_1list_ab02a8919139c4189e2e7f392c0c3ffe7}{size}}() ? false : \textcolor{keyword}{true}; \}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00142}00142 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00143}00143     \textcolor{keyword}{template} <\textcolor{keyword}{class} U>}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00144}00144     \textcolor{keyword}{friend} std::ostream\& \mbox{\hyperlink{classutil_1_1list_ac898f0dde3343ae7f045c219e47a2191}{operator<<}}(std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1list}{list<U>}}\& theList);}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00145}00145 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00146}00146    \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00147}00147     \textcolor{keywordtype}{void} display(std::ostream\& out = std::cout) \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00148}00148 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00149}00149    \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00153}\mbox{\hyperlink{classutil_1_1list_1_1iterator}{00153}}     \textcolor{keyword}{class }\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \{}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00154}\mbox{\hyperlink{classutil_1_1list_1_1iterator_a39e8296e3b93358d0af90000b5d9113c}{00154}}         \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classutil_1_1list}{list}};}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00156}00156         Node* m\_pNode;  }
 \DoxyCodeLine{\Hypertarget{utillist_8h_source_l00157}00157 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00158}\mbox{\hyperlink{classutil_1_1list_1_1iterator_a288e376d79e927dcba9a4a272bff5c7d}{00158}}             T\& \mbox{\hyperlink{classutil_1_1list_1_1iterator_a288e376d79e927dcba9a4a272bff5c7d}{operator*}}()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00159}00159                 \textcolor{comment}{// Return a reference to the object stored in the current node}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00160}00160                 \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}Node*\textcolor{keyword}{>}(m\_pNode)-\/>data;}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00161}00161             \}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00162}00162 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00163}\mbox{\hyperlink{classutil_1_1list_1_1iterator_a9525cc40d4bae8a06d9a435fec95d1d4}{00163}}             T* \mbox{\hyperlink{classutil_1_1list_1_1iterator_a9525cc40d4bae8a06d9a435fec95d1d4}{operator-\/>}}()\textcolor{keyword}{ const }\{}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00164}00164                 \textcolor{comment}{// Return a pointer to the object stored in the current node}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00165}00165                 \textcolor{keywordflow}{return} \&(\textcolor{keyword}{static\_cast<}Node*\textcolor{keyword}{>}(m\_pNode)-\/>data);}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00166}00166             \}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00167}00167         \};}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00168}00168 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00169}00169         \textcolor{comment}{// Returns an iterator which points to the first element of your list}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00170}\mbox{\hyperlink{classutil_1_1list_a22c3d41fe179549677ef2bdf03dcb9d9}{00170}}         \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list_a22c3d41fe179549677ef2bdf03dcb9d9}{begin}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}}(head); \}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00171}00171 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00172}00172         \textcolor{comment}{// Returns a special iterator which points to a placeholder node which is the}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00173}00173         \textcolor{comment}{// successor of the last node stored in the list.}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00174}00174         \textcolor{comment}{// Calling method end() of any STL container never returns an iterator pointing}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00175}00175         \textcolor{comment}{// to the last object but an iterator which does not point to a valid object. }}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00176}00176         \textcolor{comment}{// As this element acts as a placeholder any attempt to access its object }}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00177}00177         \textcolor{comment}{// results in undefined behavior.}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00178}\mbox{\hyperlink{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}{00178}}         \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}{end}}() \{}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00179}00179             \textcolor{comment}{// create a placeholder node after the list tail node}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00180}00180             \textcolor{comment}{// note that the data member of this node is not initialized as it is not needed}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00181}00181             \textcolor{comment}{// this will rersult in an undefined behavior when accessing it (as expected).}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00182}00182             Node* beyond\_end = \textcolor{keyword}{new} Node();}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00183}00183 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00184}00184             beyond\_end-\/>prev = tail;}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00185}00185             \textcolor{comment}{//beyond\_end-\/>next = beyond\_end;}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00186}00186             tail-\/>next = beyond\_end;}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00187}00187 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00188}00188             \textcolor{keywordflow}{return} \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}}(beyond\_end); }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00189}00189         \}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00190}00190 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00196}\mbox{\hyperlink{classutil_1_1list_ab577f446772d90c2b6c85424ad1d5aed}{00196}}         \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list_ab577f446772d90c2b6c85424ad1d5aed}{insert}}(\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} position, \textcolor{keyword}{const} T\& element) \{}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00197}00197             \textcolor{keywordflow}{return} \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}}(head);}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00198}00198         \}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00199}00199 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00213}\mbox{\hyperlink{classutil_1_1list_aea23f42622a3775a323c3b0687794b26}{00213}}         \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list_aea23f42622a3775a323c3b0687794b26}{erase}}(\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} position) \{}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00214}00214             \textcolor{comment}{//the end() iterator cannot be used as a parameter}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00215}00215             \textcolor{keywordflow}{if} (position == \mbox{\hyperlink{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}{end}}()) \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}{end}}(); \}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00216}00216 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00217}00217             \textcolor{keywordflow}{if} (position.m\_pNode != head \&\& position.m\_pNode != tail-\/>next) \{}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00218}00218                 Node *successor = position.m\_pNode-\/>next;}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00219}00219                 position.m\_pNode-\/>prev-\/>next = successor;}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00220}00220                 position.m\_pNode-\/>next-\/>prev = position.m\_pNode-\/>prev;}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00221}00221                 \textcolor{keyword}{delete} position.m\_pNode;}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00222}00222                 \textcolor{keywordflow}{return} (successor == tail)? \mbox{\hyperlink{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}{end}}():\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}}(successor);}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00223}00223             \}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00224}00224 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00225}00225             \textcolor{keywordflow}{if} (position.m\_pNode == head) \{}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00226}00226                 this-\/>\mbox{\hyperlink{classutil_1_1list_a8e4b226b16c012078ebf8bdce9afe76a}{pop\_front}}();}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00227}00227                 \textcolor{keywordflow}{return} \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}}(head);}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00228}00228             \}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00229}00229             }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00230}00230             this-\/>\mbox{\hyperlink{classutil_1_1list_a85f9138efb4543f32790ec0c03d6d670}{pop\_back}}();}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00231}00231             \textcolor{keywordflow}{return} \mbox{\hyperlink{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}{end}}();}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00232}00232         \}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00233}00233 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00234}00234     \};  \textcolor{comment}{// end class list}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00235}00235 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00236}00236 \}  \textcolor{comment}{// end namespace util}}
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00237}00237 }
-\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00238}00238 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* UTILLIST\_CPP */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00158}00158        \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00160}\mbox{\hyperlink{classutil_1_1list_1_1iterator_a438784658d32428ec05e10c0688f3d72}{00160}}         \mbox{\hyperlink{classutil_1_1list_1_1iterator_a438784658d32428ec05e10c0688f3d72}{iterator}}(Node* pNode) : m\_pNode(pNode) \{\}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00161}00161 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00163}\mbox{\hyperlink{classutil_1_1list_1_1iterator_a95bb1dba5eb891ed4b6cfa2e6b5d2a5d}{00163}}         \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classutil_1_1list_1_1iterator_a95bb1dba5eb891ed4b6cfa2e6b5d2a5d}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}}\& it)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} this-\/>m\_pNode == it.m\_pNode; \}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00164}00164 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00166}\mbox{\hyperlink{classutil_1_1list_1_1iterator_ae9dc10de8430253579e2932b06d66340}{00166}}         \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classutil_1_1list_1_1iterator_ae9dc10de8430253579e2932b06d66340}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}}\& it)\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} this-\/>m\_pNode != it.m\_pNode; \}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00167}00167 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00169}\mbox{\hyperlink{classutil_1_1list_1_1iterator_ae46f69d8aa62dcf266c3be3e1fc9bb46}{00169}}         \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}}\& \mbox{\hyperlink{classutil_1_1list_1_1iterator_ae46f69d8aa62dcf266c3be3e1fc9bb46}{operator++}}() \{}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00170}00170             \textcolor{comment}{// Point/Go to the next value of m\_pNode}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00171}00171             m\_pNode = \textcolor{keyword}{static\_cast<}Node*\textcolor{keyword}{>}(m\_pNode)-\/>next;}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00172}00172             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00173}00173         \}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00174}00174 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00176}\mbox{\hyperlink{classutil_1_1list_1_1iterator_a748d9ff17ee9b5ca603d37e9109e5010}{00176}}         \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list_1_1iterator_a748d9ff17ee9b5ca603d37e9109e5010}{operator++}}(\textcolor{keywordtype}{int}) \{}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00177}00177             \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} tmp(*\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00178}00178             ++*\textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00179}00179             \textcolor{keywordflow}{return} tmp;}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00180}00180         \}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00181}00181 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00183}\mbox{\hyperlink{classutil_1_1list_1_1iterator_a288e376d79e927dcba9a4a272bff5c7d}{00183}}         T\& \mbox{\hyperlink{classutil_1_1list_1_1iterator_a288e376d79e927dcba9a4a272bff5c7d}{operator*}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}Node*\textcolor{keyword}{>}(m\_pNode)-\/>data; \}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00184}00184 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00186}\mbox{\hyperlink{classutil_1_1list_1_1iterator_a9525cc40d4bae8a06d9a435fec95d1d4}{00186}}         T* \mbox{\hyperlink{classutil_1_1list_1_1iterator_a9525cc40d4bae8a06d9a435fec95d1d4}{operator-\/>}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \&(\textcolor{keyword}{static\_cast<}Node*\textcolor{keyword}{>}(m\_pNode)-\/>data); \}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00187}00187     \};}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00188}00188 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00190}\mbox{\hyperlink{classutil_1_1list_a22c3d41fe179549677ef2bdf03dcb9d9}{00190}}     \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list_a22c3d41fe179549677ef2bdf03dcb9d9}{begin}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}}(head); \}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00191}00191 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00200}\mbox{\hyperlink{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}{00200}}     \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}{end}}() \{}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00201}00201         \textcolor{comment}{// create a circular link between the the tail and beyond\_tail nodes}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00202}00202         \textcolor{comment}{//  tail <=> beyond\_tail}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00203}00203         tail-\/>next = beyond\_tail;}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00204}00204 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00205}00205         \textcolor{keywordflow}{return} \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}}(beyond\_tail);}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00206}00206     \}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00207}00207 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00213}\mbox{\hyperlink{classutil_1_1list_ab577f446772d90c2b6c85424ad1d5aed}{00213}}     \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list_ab577f446772d90c2b6c85424ad1d5aed}{insert}}(\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} position, \textcolor{keyword}{const} T\& element) \{}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00214}00214         \textcolor{comment}{// check if it is the end iterator}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00215}00215         \textcolor{keywordflow}{if} (position == \mbox{\hyperlink{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}{end}}()) \{}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00216}00216             \mbox{\hyperlink{classutil_1_1list_a8cd44954211aebb4131caaa058085421}{push\_back}}(element);}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00217}00217             \textcolor{keywordflow}{return} \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}}(tail);}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00218}00218         \}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00219}00219 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00225}00225         Node* newNode = \textcolor{keyword}{new} Node(element, position.m\_pNode-\/>next, position.m\_pNode);}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00226}00226         \textcolor{keywordflow}{if} (position.m\_pNode == tail) tail = newNode;}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00227}00227         position.m\_pNode-\/>next = newNode;}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00228}00228         position.m\_pNode-\/>next-\/>prev = newNode;}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00229}00229         \textcolor{keywordflow}{return} \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}}(newNode);}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00230}00230     \}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00231}00231 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00245}\mbox{\hyperlink{classutil_1_1list_aea23f42622a3775a323c3b0687794b26}{00245}}     \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list_aea23f42622a3775a323c3b0687794b26}{erase}}(\mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} position) \textcolor{keywordflow}{throw}(\textcolor{keywordtype}{char}*) \{}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00246}00246         \textcolor{comment}{// the end() iterator cannot be used as a parameter}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00247}00247         \textcolor{keywordflow}{if} (position == \mbox{\hyperlink{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}{end}}()) \{}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00248}00248             \textcolor{comment}{// return end();}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00249}00249             \textcolor{keywordflow}{throw} \textcolor{stringliteral}{"{}Exception from util::list::erase(): iterator must be valid and dereferenceable. end() iterator cannot be used as a parameter"{}};}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00250}00250         \}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00251}00251 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00252}00252         \textcolor{keywordflow}{if} (position.m\_pNode != head \&\& position.m\_pNode != tail-\/>next) \{}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00253}00253             Node* successor = position.m\_pNode-\/>next;}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00254}00254             position.m\_pNode-\/>prev-\/>next = successor;}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00255}00255             position.m\_pNode-\/>next-\/>prev = position.m\_pNode-\/>prev;}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00256}00256             \textcolor{keyword}{delete} position.m\_pNode;}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00257}00257             \textcolor{keywordflow}{return} (successor == tail) ? \mbox{\hyperlink{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}{end}}() : \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}}(successor);}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00258}00258         \}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00259}00259 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00260}00260         \textcolor{keywordflow}{if} (position.m\_pNode == head) \{}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00261}00261             this-\/>\mbox{\hyperlink{classutil_1_1list_a8e4b226b16c012078ebf8bdce9afe76a}{pop\_front}}();}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00262}00262             \textcolor{keywordflow}{return} \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}}(head);}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00263}00263         \}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00264}00264 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00265}00265         this-\/>\mbox{\hyperlink{classutil_1_1list_a85f9138efb4543f32790ec0c03d6d670}{pop\_back}}();}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00266}00266         \textcolor{keywordflow}{return} \mbox{\hyperlink{classutil_1_1list_a3c954bc468c5d82dbc1de212d261b980}{end}}();}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00267}00267     \}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00268}00268 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00269}00269 \};  \textcolor{comment}{// end class list}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00270}00270 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00271}00271 \}  \textcolor{comment}{// end namespace util}}
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00272}00272 }
+\DoxyCodeLine{\Hypertarget{utillist_8h_source_l00273}00273 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* UTILLIST\_CPP */}\textcolor{preprocessor}{}}
 
 \end{DoxyCode}

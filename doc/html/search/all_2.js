@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['end_0',['end',['../dc/d07/classutil_1_1list.html#a3c954bc468c5d82dbc1de212d261b980',1,'util::list']]],
-  ['erase_1',['erase',['../dc/d07/classutil_1_1list.html#aea23f42622a3775a323c3b0687794b26',1,'util::list']]]
+  ['back_0',['back',['../dc/d07/classutil_1_1list.html#ad589c3344bbcec29c40042561bce57e6',1,'util::list']]],
+  ['begin_1',['begin',['../dc/d07/classutil_1_1list.html#a22c3d41fe179549677ef2bdf03dcb9d9',1,'util::list']]]
 ];

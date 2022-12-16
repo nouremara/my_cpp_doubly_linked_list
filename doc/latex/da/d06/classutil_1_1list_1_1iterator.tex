@@ -31,9 +31,9 @@ class \mbox{\hyperlink{classutil_1_1list_1_1iterator_a39e8296e3b93358d0af90000b5
 \doxysubsection{Detailed Description}
 \subsubsection*{template$<$class T$>$\newline
 class util\+::list$<$ T $>$\+::iterator}
+To allow iterating your list, a simplified version of the iterator concept is implemented as a nested class 
 
-
-Definition at line \mbox{\hyperlink{utillist_8h_source_l00134}{134}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00153}{153}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
 
 
 
@@ -45,9 +45,9 @@ Definition at line \mbox{\hyperlink{utillist_8h_source_l00134}{134}} of file \mb
 {\footnotesize\ttfamily template$<$class T $>$ \\
 \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::iterator\+::iterator (\begin{DoxyParamCaption}\item[{Node $\ast$}]{p\+Node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+constructor create the iterator and associate it to a node. 
 
-
-Definition at line \mbox{\hyperlink{utillist_8h_source_l00139}{139}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00160}{160}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
 
 
 
@@ -59,9 +59,9 @@ Definition at line \mbox{\hyperlink{utillist_8h_source_l00139}{139}} of file \mb
 {\footnotesize\ttfamily template$<$class T $>$ \\
 bool \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::iterator\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \&}]{it }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+Two iterators are not equal if they point to different nodes. 
 
-
-Definition at line \mbox{\hyperlink{utillist_8h_source_l00143}{143}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00166}{166}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
 
 \mbox{\Hypertarget{classutil_1_1list_1_1iterator_a288e376d79e927dcba9a4a272bff5c7d}\label{classutil_1_1list_1_1iterator_a288e376d79e927dcba9a4a272bff5c7d}} 
 \index{util::list$<$ T $>$::iterator@{util::list$<$ T $>$::iterator}!operator$\ast$@{operator$\ast$}}
@@ -70,9 +70,9 @@ Definition at line \mbox{\hyperlink{utillist_8h_source_l00143}{143}} of file \mb
 {\footnotesize\ttfamily template$<$class T $>$ \\
 T \& \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::iterator\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+Return a reference to the object stored in the current node. 
 
-
-Definition at line \mbox{\hyperlink{utillist_8h_source_l00158}{158}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00183}{183}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
 
 \mbox{\Hypertarget{classutil_1_1list_1_1iterator_ae46f69d8aa62dcf266c3be3e1fc9bb46}\label{classutil_1_1list_1_1iterator_ae46f69d8aa62dcf266c3be3e1fc9bb46}} 
 \index{util::list$<$ T $>$::iterator@{util::list$<$ T $>$::iterator}!operator++@{operator++}}
@@ -81,9 +81,9 @@ Definition at line \mbox{\hyperlink{utillist_8h_source_l00158}{158}} of file \mb
 {\footnotesize\ttfamily template$<$class T $>$ \\
 \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \& \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::iterator\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+advance the iterator to the next node. 
 
-
-Definition at line \mbox{\hyperlink{utillist_8h_source_l00145}{145}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00169}{169}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
 
 \mbox{\Hypertarget{classutil_1_1list_1_1iterator_a748d9ff17ee9b5ca603d37e9109e5010}\label{classutil_1_1list_1_1iterator_a748d9ff17ee9b5ca603d37e9109e5010}} 
 \index{util::list$<$ T $>$::iterator@{util::list$<$ T $>$::iterator}!operator++@{operator++}}
@@ -92,9 +92,9 @@ Definition at line \mbox{\hyperlink{utillist_8h_source_l00145}{145}} of file \mb
 {\footnotesize\ttfamily template$<$class T $>$ \\
 \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::iterator\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+advance the iterator to the next node (Postfix variant). 
 
-
-Definition at line \mbox{\hyperlink{utillist_8h_source_l00151}{151}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00176}{176}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
 
 \mbox{\Hypertarget{classutil_1_1list_1_1iterator_a9525cc40d4bae8a06d9a435fec95d1d4}\label{classutil_1_1list_1_1iterator_a9525cc40d4bae8a06d9a435fec95d1d4}} 
 \index{util::list$<$ T $>$::iterator@{util::list$<$ T $>$::iterator}!operator-\/$>$@{operator-\/$>$}}
@@ -103,9 +103,9 @@ Definition at line \mbox{\hyperlink{utillist_8h_source_l00151}{151}} of file \mb
 {\footnotesize\ttfamily template$<$class T $>$ \\
 T $\ast$ \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::iterator\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+Return a pointer to the object stored in the current node. 
 
-
-Definition at line \mbox{\hyperlink{utillist_8h_source_l00163}{163}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00186}{186}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
 
 \mbox{\Hypertarget{classutil_1_1list_1_1iterator_a95bb1dba5eb891ed4b6cfa2e6b5d2a5d}\label{classutil_1_1list_1_1iterator_a95bb1dba5eb891ed4b6cfa2e6b5d2a5d}} 
 \index{util::list$<$ T $>$::iterator@{util::list$<$ T $>$::iterator}!operator==@{operator==}}
@@ -114,9 +114,9 @@ Definition at line \mbox{\hyperlink{utillist_8h_source_l00163}{163}} of file \mb
 {\footnotesize\ttfamily template$<$class T $>$ \\
 bool \mbox{\hyperlink{classutil_1_1list}{util\+::list}}$<$ T $>$\+::iterator\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classutil_1_1list_1_1iterator}{iterator}} \&}]{it }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+Two iterators are equal if they point to the same node. 
 
-
-Definition at line \mbox{\hyperlink{utillist_8h_source_l00142}{142}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00163}{163}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
 
 
 
@@ -130,7 +130,7 @@ friend class \mbox{\hyperlink{classutil_1_1list}{list}}\hspace{0.3cm}{\ttfamily 
 
 
 
-Definition at line \mbox{\hyperlink{utillist_8h_source_l00135}{135}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
+Definition at line \mbox{\hyperlink{utillist_8h_source_l00154}{154}} of file \mbox{\hyperlink{utillist_8h_source}{utillist.\+h}}.
 
 
 

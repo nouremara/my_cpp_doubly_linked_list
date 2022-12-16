@@ -100,6 +100,9 @@ $(document).ready(function(){initNavTree('dc/d07/classutil_1_1list.html','../../
 </div><!--header-->
 <div class="contents">
 
+<p>Implementation of of own doubly linked list class.  
+ <a href="../../dc/d07/classutil_1_1list.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="../../da/d02/utillist_8h_source.html">utillist.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
@@ -113,8 +116,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8454da40e36f0d44cb989d32649f811a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6b706cd4edff5185968fdb935c84ddc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classutil_1_1list.html#ab6b706cd4edff5185968fdb935c84ddc">~list</a> ()</td></tr>
 <tr class="separator:ab6b706cd4edff5185968fdb935c84ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab27649cee72d09b8757dfdde6b518b67"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classutil_1_1list.html#ab27649cee72d09b8757dfdde6b518b67">list</a> (const <a class="el" href="../../dc/d07/classutil_1_1list.html">list</a>&lt; T &gt; &amp;dll)=delete</td></tr>
-<tr class="separator:ab27649cee72d09b8757dfdde6b518b67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6edbfbffbb9bfabd5337a6f40797571"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classutil_1_1list.html#ab6edbfbffbb9bfabd5337a6f40797571">list</a> (const <a class="el" href="../../dc/d07/classutil_1_1list.html">list</a>&lt; T &gt; &amp;other_doubly_linked_list)=delete</td></tr>
+<tr class="separator:ab6edbfbffbb9bfabd5337a6f40797571"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a409cb58ce3ea240315129094a394d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dc/d07/classutil_1_1list.html">list</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classutil_1_1list.html#a4a409cb58ce3ea240315129094a394d4">operator=</a> (<a class="el" href="../../dc/d07/classutil_1_1list.html">list</a> const &amp;)=delete</td></tr>
 <tr class="separator:a4a409cb58ce3ea240315129094a394d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6de8a701d5cdacd2ab8bddf261bb4661"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classutil_1_1list.html#a6de8a701d5cdacd2ab8bddf261bb4661">front</a> ()</td></tr>
@@ -123,7 +126,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad589c3344bbcec29c40042561bce57e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34564499cb63b820d29c8a4054ae093f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classutil_1_1list.html#a34564499cb63b820d29c8a4054ae093f">push_front</a> (const T &amp;element)</td></tr>
 <tr class="separator:a34564499cb63b820d29c8a4054ae093f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e4b226b16c012078ebf8bdce9afe76a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classutil_1_1list.html#a8e4b226b16c012078ebf8bdce9afe76a">pop_front</a> ()</td></tr>
+<tr class="memitem:a8e4b226b16c012078ebf8bdce9afe76a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classutil_1_1list.html#a8e4b226b16c012078ebf8bdce9afe76a">pop_front</a> ()  throw (char*)</td></tr>
 <tr class="separator:a8e4b226b16c012078ebf8bdce9afe76a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85f9138efb4543f32790ec0c03d6d670"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classutil_1_1list.html#a85f9138efb4543f32790ec0c03d6d670">pop_back</a> ()</td></tr>
 <tr class="separator:a85f9138efb4543f32790ec0c03d6d670"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,13 +136,16 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac6a3cd1d3dce0343ba83b80d085dcae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab02a8919139c4189e2e7f392c0c3ffe7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classutil_1_1list.html#ab02a8919139c4189e2e7f392c0c3ffe7">size</a> () const</td></tr>
 <tr class="separator:ab02a8919139c4189e2e7f392c0c3ffe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac256ba50a1e1710f40b4e82f2df00bb3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classutil_1_1list.html#ac256ba50a1e1710f40b4e82f2df00bb3">empty</a> () const</td></tr>
+<tr class="separator:ac256ba50a1e1710f40b4e82f2df00bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22c3d41fe179549677ef2bdf03dcb9d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d06/classutil_1_1list_1_1iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classutil_1_1list.html#a22c3d41fe179549677ef2bdf03dcb9d9">begin</a> ()</td></tr>
 <tr class="separator:a22c3d41fe179549677ef2bdf03dcb9d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c954bc468c5d82dbc1de212d261b980"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d06/classutil_1_1list_1_1iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classutil_1_1list.html#a3c954bc468c5d82dbc1de212d261b980">end</a> ()</td></tr>
+<tr class="memdesc:a3c954bc468c5d82dbc1de212d261b980"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a special iterator which points to a placeholder node which is the successor of the last node stored in the list. Calling method <a class="el" href="../../dc/d07/classutil_1_1list.html#a3c954bc468c5d82dbc1de212d261b980" title="Returns a special iterator which points to a placeholder node which is the successor of the last node...">end()</a> of any STL container never returns an iterator pointing to the last object but an iterator which does not point to a valid object. As this element acts as a placeholder any attempt to access its object results in undefined behavior.  <a href="../../dc/d07/classutil_1_1list.html#a3c954bc468c5d82dbc1de212d261b980">More...</a><br /></td></tr>
 <tr class="separator:a3c954bc468c5d82dbc1de212d261b980"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab577f446772d90c2b6c85424ad1d5aed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d06/classutil_1_1list_1_1iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classutil_1_1list.html#ab577f446772d90c2b6c85424ad1d5aed">insert</a> (<a class="el" href="../../da/d06/classutil_1_1list_1_1iterator.html">iterator</a> position, const T &amp;element)</td></tr>
 <tr class="separator:ab577f446772d90c2b6c85424ad1d5aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea23f42622a3775a323c3b0687794b26"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d06/classutil_1_1list_1_1iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classutil_1_1list.html#aea23f42622a3775a323c3b0687794b26">erase</a> (<a class="el" href="../../da/d06/classutil_1_1list_1_1iterator.html">iterator</a> position)</td></tr>
+<tr class="memitem:aea23f42622a3775a323c3b0687794b26"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d06/classutil_1_1list_1_1iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d07/classutil_1_1list.html#aea23f42622a3775a323c3b0687794b26">erase</a> (<a class="el" href="../../da/d06/classutil_1_1list_1_1iterator.html">iterator</a> position)  throw (char*)</td></tr>
 <tr class="memdesc:aea23f42622a3775a323c3b0687794b26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove element at given position.  <a href="../../dc/d07/classutil_1_1list.html#aea23f42622a3775a323c3b0687794b26">More...</a><br /></td></tr>
 <tr class="separator:aea23f42622a3775a323c3b0687794b26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -151,9 +157,12 @@ Friends</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class T&gt;<br />
-class util::list&lt; T &gt;</div><p >Class list represents a container which organizes stored objects with a so-called doubly linked list. A doubly linked list is basically a list of nodes which are connected among each other </p>
+class util::list&lt; T &gt;</div><p >Implementation of of own doubly linked list class. </p>
+<p >Template to make the list generic such that any type can be stored. T represents the actual type </p>
+<p >This class presents own list class implementation which organizes stored objects with a so-called doubly linked list. A doubly linked list is basically a list of nodes which are connected among each other in both directions.</p>
+<p >This <a class="el" href="../../dc/d07/classutil_1_1list.html" title="Implementation of of own doubly linked list class.">util::list</a> is a container that supports adding, insertion, removal, and moving of elements from anywhere in the container. It provides also bidirectional iteration capability. This class behavior will be similar (but simplified) to the std::list. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d02/utillist_8h_source.html#l00039">39</a> of file <a class="el" href="../../da/d02/utillist_8h_source.html">utillist.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d02/utillist_8h_source.html#l00051">51</a> of file <a class="el" href="../../da/d02/utillist_8h_source.html">utillist.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8454da40e36f0d44cb989d32649f811a" name="a8454da40e36f0d44cb989d32649f811a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8454da40e36f0d44cb989d32649f811a">&#9670;&#160;</a></span>list() <span class="overload">[1/2]</span></h2>
@@ -179,8 +188,9 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p >default constructor creates an empty list </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d02/utillist_8h_source.html#l00069">69</a> of file <a class="el" href="../../da/d02/utillist_8h_source.html">utillist.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d02/utillist_8h_source.html#l00086">86</a> of file <a class="el" href="../../da/d02/utillist_8h_source.html">utillist.h</a>.</p>
 
 </div>
 </div>
@@ -197,13 +207,14 @@ template&lt;class T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >destructor </p>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d02/utillist_8cpp_source.html#l00030">30</a> of file <a class="el" href="../../df/d02/utillist_8cpp_source.html">utillist.cpp</a>.</p>
 
 </div>
 </div>
-<a id="ab27649cee72d09b8757dfdde6b518b67" name="ab27649cee72d09b8757dfdde6b518b67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab27649cee72d09b8757dfdde6b518b67">&#9670;&#160;</a></span>list() <span class="overload">[2/2]</span></h2>
+<a id="ab6edbfbffbb9bfabd5337a6f40797571" name="ab6edbfbffbb9bfabd5337a6f40797571"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6edbfbffbb9bfabd5337a6f40797571">&#9670;&#160;</a></span>list() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -217,7 +228,7 @@ template&lt;class T &gt; </div>
           <td class="memname"><a class="el" href="../../dc/d07/classutil_1_1list.html">util::list</a>&lt; T &gt;::list </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="../../dc/d07/classutil_1_1list.html">list</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>dll</em></td><td>)</td>
+          <td class="paramname"><em>other_doubly_linked_list</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -255,8 +266,9 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p >Gives access to the last element of the list </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d02/utillist_8h_source.html#l00081">81</a> of file <a class="el" href="../../da/d02/utillist_8h_source.html">utillist.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d02/utillist_8h_source.html#l00098">98</a> of file <a class="el" href="../../da/d02/utillist_8h_source.html">utillist.h</a>.</p>
 
 </div>
 </div>
@@ -284,8 +296,9 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p >Returns an iterator which points to the first element of your list. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d02/utillist_8h_source.html#l00170">170</a> of file <a class="el" href="../../da/d02/utillist_8h_source.html">utillist.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d02/utillist_8h_source.html#l00190">190</a> of file <a class="el" href="../../da/d02/utillist_8h_source.html">utillist.h</a>.</p>
 
 </div>
 </div>
@@ -302,8 +315,39 @@ template&lt;class T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >Clears the list </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d02/utillist_8cpp_source.html#l00094">94</a> of file <a class="el" href="../../df/d02/utillist_8cpp_source.html">utillist.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d02/utillist_8cpp_source.html#l00101">101</a> of file <a class="el" href="../../df/d02/utillist_8cpp_source.html">utillist.cpp</a>.</p>
+
+</div>
+</div>
+<a id="ac256ba50a1e1710f40b4e82f2df00bb3" name="ac256ba50a1e1710f40b4e82f2df00bb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac256ba50a1e1710f40b4e82f2df00bb3">&#9670;&#160;</a></span>empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="../../dc/d07/classutil_1_1list.html">util::list</a>&lt; T &gt;::empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p >Returns true, if the list does not contain elements </p>
+
+<p class="definition">Definition at line <a class="el" href="../../da/d02/utillist_8h_source.html#l00141">141</a> of file <a class="el" href="../../da/d02/utillist_8h_source.html">utillist.h</a>.</p>
 
 </div>
 </div>
@@ -332,7 +376,9 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d02/utillist_8h_source.html#l00178">178</a> of file <a class="el" href="../../da/d02/utillist_8h_source.html">utillist.h</a>.</p>
+<p>Returns a special iterator which points to a placeholder node which is the successor of the last node stored in the list. Calling method <a class="el" href="../../dc/d07/classutil_1_1list.html#a3c954bc468c5d82dbc1de212d261b980" title="Returns a special iterator which points to a placeholder node which is the successor of the last node...">end()</a> of any STL container never returns an iterator pointing to the last object but an iterator which does not point to a valid object. As this element acts as a placeholder any attempt to access its object results in undefined behavior. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../da/d02/utillist_8h_source.html#l00200">200</a> of file <a class="el" href="../../da/d02/utillist_8h_source.html">utillist.h</a>.</p>
 
 </div>
 </div>
@@ -354,6 +400,12 @@ template&lt;class T &gt; </div>
           <td class="paramname"><em>position</em></td><td>)</td>
           <td></td>
         </tr>
+        <tr>
+          <td align="right">throw </td><td>(</td><td colspan="2">char *</td>
+        </tr>
+        <tr>
+          <td align="right"></td><td>)</td><td></td><td></td>
+        </tr>
       </table>
   </td>
   <td class="mlabels-right">
@@ -365,14 +417,14 @@ template&lt;class T &gt; </div>
 <p>Remove element at given position. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">position</td><td>Iterator pointing to element to be erased. Iterator must be valid and de-referenceable. For that reason, the <a class="el" href="../../dc/d07/classutil_1_1list.html#a3c954bc468c5d82dbc1de212d261b980">end()</a> iterator cannot be used as a parameter. </td></tr>
+    <tr><td class="paramname">position</td><td>Iterator pointing to element to be erased. Iterator must be valid and de-referencible. For that reason, the <a class="el" href="../../dc/d07/classutil_1_1list.html#a3c954bc468c5d82dbc1de212d261b980" title="Returns a special iterator which points to a placeholder node which is the successor of the last node...">end()</a> iterator cannot be used as a parameter. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>An iterator pointing to the next element (the successor of the erased object) or <a class="el" href="../../dc/d07/classutil_1_1list.html#a3c954bc468c5d82dbc1de212d261b980">end()</a>.</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>An iterator pointing to the next element (the successor of the erased object) or <a class="el" href="../../dc/d07/classutil_1_1list.html#a3c954bc468c5d82dbc1de212d261b980" title="Returns a special iterator which points to a placeholder node which is the successor of the last node...">end()</a>.</dd></dl>
 <p>@description This function will erase the element at the given position and thus shorten the list by one. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d02/utillist_8h_source.html#l00213">213</a> of file <a class="el" href="../../da/d02/utillist_8h_source.html">utillist.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d02/utillist_8h_source.html#l00245">245</a> of file <a class="el" href="../../da/d02/utillist_8h_source.html">utillist.h</a>.</p>
 
 </div>
 </div>
@@ -400,8 +452,9 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p >Gives access to the first element of the list </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d02/utillist_8h_source.html#l00078">78</a> of file <a class="el" href="../../da/d02/utillist_8h_source.html">utillist.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d02/utillist_8h_source.html#l00095">95</a> of file <a class="el" href="../../da/d02/utillist_8h_source.html">utillist.h</a>.</p>
 
 </div>
 </div>
@@ -440,9 +493,10 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Adds element one position before the object iterator is currently pointing to. iterator may be the <a class="el" href="../../dc/d07/classutil_1_1list.html#a3c954bc468c5d82dbc1de212d261b980">end()</a> iterator. Returns an iterator pointing to the newly added element. </p>
+<p >Adds element one position before the object iterator is currently pointing to. iterator may be the <a class="el" href="../../dc/d07/classutil_1_1list.html#a3c954bc468c5d82dbc1de212d261b980" title="Returns a special iterator which points to a placeholder node which is the successor of the last node...">end()</a> iterator. Returns an iterator pointing to the newly added element. </p>
+<p >create a new node with the contents given. Its next is the current position next node, and its previous is the node at current position.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d02/utillist_8h_source.html#l00196">196</a> of file <a class="el" href="../../da/d02/utillist_8h_source.html">utillist.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d02/utillist_8h_source.html#l00213">213</a> of file <a class="el" href="../../da/d02/utillist_8h_source.html">utillist.h</a>.</p>
 
 </div>
 </div>
@@ -487,8 +541,9 @@ template&lt;class T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >removes the last element from the list </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d02/utillist_8cpp_source.html#l00073">73</a> of file <a class="el" href="../../df/d02/utillist_8cpp_source.html">utillist.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d02/utillist_8cpp_source.html#l00080">80</a> of file <a class="el" href="../../df/d02/utillist_8cpp_source.html">utillist.cpp</a>.</p>
 
 </div>
 </div>
@@ -502,6 +557,12 @@ template&lt;class T &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="../../dc/d07/classutil_1_1list.html">util::list</a>&lt; T &gt;::pop_front</td>
+        </tr>
+        <tr>
+          <td align="right">throw </td><td>(</td><td colspan="2">char *</td>
+        </tr>
+        <tr>
+          <td align="right"></td><td>)</td><td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -535,8 +596,9 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p >Adds element to the end of the list </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d02/utillist_8h_source.html#l00104">104</a> of file <a class="el" href="../../da/d02/utillist_8h_source.html">utillist.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d02/utillist_8h_source.html#l00121">121</a> of file <a class="el" href="../../da/d02/utillist_8h_source.html">utillist.h</a>.</p>
 
 </div>
 </div>
@@ -565,8 +627,9 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p >Adds element to the front of the list </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d02/utillist_8h_source.html#l00084">84</a> of file <a class="el" href="../../da/d02/utillist_8h_source.html">utillist.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d02/utillist_8h_source.html#l00101">101</a> of file <a class="el" href="../../da/d02/utillist_8h_source.html">utillist.h</a>.</p>
 
 </div>
 </div>
@@ -583,8 +646,9 @@ template&lt;class T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p >Returns the amount of stored objects </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d02/utillist_8cpp_source.html#l00108">108</a> of file <a class="el" href="../../df/d02/utillist_8cpp_source.html">utillist.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d02/utillist_8cpp_source.html#l00115">115</a> of file <a class="el" href="../../df/d02/utillist_8cpp_source.html">utillist.cpp</a>.</p>
 
 </div>
 </div>
@@ -627,7 +691,7 @@ template&lt;class U &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d02/utillist_8cpp_source.html#l00140">140</a> of file <a class="el" href="../../df/d02/utillist_8cpp_source.html">utillist.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d02/utillist_8cpp_source.html#l00147">147</a> of file <a class="el" href="../../df/d02/utillist_8cpp_source.html">utillist.cpp</a>.</p>
 
 </div>
 </div>
