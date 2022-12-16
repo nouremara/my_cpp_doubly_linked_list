@@ -99,7 +99,7 @@ class list {
         head = node;
     }
 
-    void pop_front();
+    void pop_front() throw (char*);
 
     // removes the last element from the list
     void pop_back();
@@ -228,10 +228,11 @@ class list {
      *  This function will erase the element at the given position and thus
      *  shorten the %list by one.
      */
-    iterator erase(iterator position) {
+    iterator erase(iterator position)  throw (char *) {
         // the end() iterator cannot be used as a parameter
         if (position == end()) {
-            return end();
+            //return end();
+            throw "Exception from util::list::erase(): iterator must be valid and dereferenceable. end() iterator cannot be used as a parameter";
         }
 
         if (position.m_pNode != head && position.m_pNode != tail->next) {

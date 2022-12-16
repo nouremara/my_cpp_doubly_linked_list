@@ -38,12 +38,18 @@ list<T>::~list() {
 }
 
 template <class T>
-void list<T>::pop_front() {
+void list<T>::pop_front()  throw (char*) {
     // check whether the doubly linked list is empty or not.
     // If it is empty, then do nothing.
-    if (head == nullptr) {
-        return;
+    if (empty()) {
+        //return end();
+        throw "Exception from util::list::pop_front(): pop_front can not be called on an empty list";
     }
+
+
+    // check whether the doubly linked list is empty or not.
+    // If it is empty, then do nothing.
+    //if (head == nullptr) { return;}
 
     // check whether the doubly linked List has just one node.If it does, 
     // we just delete that node and set the head and tail pointers to NULL.

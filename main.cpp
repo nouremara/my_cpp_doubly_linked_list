@@ -121,6 +121,19 @@ int main() {
     std::cout << "\tmyList: " << myList << "\n";
     std::cout << "\tmyList size now is: " << myList.size() << "\n";
     std::cout << "\tis myList empty? " << (myList.empty() ? "true" : "false") << "\n";
+
+
+    util::printTestCase("pop_front() on the empty list");
+    try {
+        myList.pop_front();
+    }
+    catch (char* e) {
+        std::cerr << "Caught exception:\n" << e << "\n\n";
+    }
+    std::cout << "\tmyList: " << myList << "\n";
+
+
+
     std::cout << "-------------------------------------------------------------------------------\n\n";
 
     util::list<Person> l;  // Store a type of your choice
@@ -156,9 +169,18 @@ int main() {
     std::cout << " List l: " << l << "\n";
 
     util::printTestCase("Test erase() the end() element");
-    itE = l.end();
-    l.erase(itE);
+    try {
+        itE = l.end();
+        l.erase(itE);
+    }
+    catch (char *e) {
+        std::cerr << "Caught exception:\n" << e << "\n\n";
+    }
+
     std::cout << " List l: " << l << "\n";
+
+
+
     std::cout << "-------------------------------------------------------------------------------\n\n";
 
     util::printSubHeader("Test insert()");
