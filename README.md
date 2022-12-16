@@ -76,6 +76,8 @@ The following methods are implemented:
 * `display()`: print the list elements and size to the standard `outstream`
 * `begin()`: Returns an iterator which points to the first element of the list
 * `end()`: Returns a special iterator which points to a placeholder node (`beyond_tail`) which is the successor of the last node stored in the list.
+* `insert(iterator, const Object& element)`: Adds element one position before the object iterator is currently pointing to. Iterator can be the `end()` iterator. Returns an iterator pointing to the newly added element.
+* `erase(iterator)`: Erases the object iterator is currently pointing to. Returns an iterator to the successor of the erased object. iterator must be valid and dereferenceable. For that reason, the `end()` iterator cannot be used as a parameter.
 
 
 Notes for the above methods and to follow the spirit of how class std::list behavior.
