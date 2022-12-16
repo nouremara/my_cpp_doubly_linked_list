@@ -18,7 +18,9 @@ Full and detailed examples of uses and tests of the class `util::list` are given
 
 An example test run is shown in the following screenshot:
 
-<img src="doc/figures/screenshot.png" alt="fishy" width="400px">
+<img src="doc/figures/screenshot1.png" alt="fishy" width="400px">
+<img src="doc/figures/screenshot2.png" alt="fishy" width="400px">
+
 
 Note that the **terminal output is colored** (using [ANSI escape codes](https://en.wikipedia.org/wiki/ANSI_escape_code)) for better visibility.
 
