@@ -1,9 +1,20 @@
 # my_cpp_doubly_linked_list
 > Implementation of Own String Class
  
- In this presents an implementation of a class named `util::list`. This class behavior is a simplified implementation of the `std::list`.
+ In this presents an implementation of a class named `util::list`. This class behavior is a simplified implementation of the `std::list`. Class `list` represents a container which organizes stored objects with a so-called doubly linked list. A doubly linked list is basically a list of nodes which are connected among each other.
 
-Full and detailed examples of uses and tests of the class `util::list` are given in the `main.cpp` file. Each method and operator is very carefully tested (e.g., concatenating different strings, ..., etc).
+ The doubly linked list data structure is implemented as shown in the following figure:
+
+  <img src="doc/figures/DoublyLinkedList.png" alt="Doubly Linked List Implementation" >
+
+  For each object that is to be stored, a new node is internally created by class `list`. Besides the object to store, each node has two pointers; `prev` and `next`. `prev` points to the previous node, `next` points to the next node.
+  
+  The first node (`head`) and last node (`tail`) are special nodes since in these cases `prev` or `next` do not point to a predecessor or successor. When adding the first object to the list, an initial node is being created which represents the first and last node at the same time.
+
+  Another special node is the `beyond_tail` node. It is a a placeholder node which is the successor of the last node stored in the list. The main purpose of this node is to be used by the method `end()` to return an iterator with it. That is to conform with the STL container conventions that never returns an iterator pointing to a valid (last) object. As this element acts as a placeholder/sentinel, any attempt to access its object results in undefined behavior.
+
+
+Full and detailed examples of uses and tests of the class `util::list` are given in the `main.cpp` file. Each method and operator is very carefully tested (e.g., calling pop_front() on an empty list, ..., etc.).
 
 An example test run is shown in the following screenshot:
 
@@ -16,18 +27,19 @@ Note that the **terminal output is colored** (using [ANSI escape codes](https://
 
 
 The following design and implementation criteria are followed:
-* **No C/C++ standard functions or classes are used** to realize `util::list` class. This include, e.g., `strcmp`, `strlen` and of course using `std::string` as an internal representation of `util::list`.
-  * This means own functions/methods are developed and implemented to calculate the length of a `char*`, to compare character sequences or to copy them full or partially.
-* For now, **no error handling** (e.g., accessing an invalid index by using operator []) is implemented. This may be done later.
-  * **Use this class at your own risk** :).
+* **No C/C++ standard functions or classes are used** to realize `util::list` class. This include, e.g., `size()`, `push_back()` and of course using `std::list` or similar as an internal representation of `util::list`.
+  * This means own functions/methods are developed and implemented to do all required operations.
+* For now, **error handling** is implemented in a simplified fashion. The `util::list` class implements an exception-based error handling for various error cases. Example: Calling `pop_front()` on an empty list shall result in an appropriate exception. Note that some errors may not be handled. This may be done later. **Use this class at your own risk** :).
 * The code follows [LLVM Coding Standards](https://llvm.org/docs/CodingStandards.html).
 * The *[sanke_case](https://en.wikipedia.org/wiki/Snake_case)* naming convention is used for variable and function names (with few exceptions).
 
-* **Use this class at your own risk** :).
+* :fire: **Use this class at your own risk** :fire: :).
 
  ## General Functionality
 * The class `util::list` is implemented inside the two files `utillist.cpp` and `utillist.h`
-* Class list is within the namespace `util`
+* Class list is within the namespace `util`.
+
+
 * The memory management is done by using a pointer (`internal_buffer`) pointing to the data type char. `char*` are (normally) null terminated. This means, that the last character is always a `\0` (NULL character) which marks the end of a char sequence. This character is never printed as it just allows for detecting whether the end of a char sequence has been reached. The string is always null-terminate (internally!)
 * Initially, the class provides memory for 10 printable characters. Note that this default value is provided by the constant `INITIAL_SIZE` (defined at the top of `utillist.h`). It can be changed if another value is desired. 
 * A relatively simple concept is designed and implemented to extend the internal memory if `util::list` has to store more than 10 characters.
