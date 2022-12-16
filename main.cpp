@@ -89,7 +89,7 @@ int main() {
     std::cout << "\tmyList: " << myList << "\n";
 
     std::cout << "-------------------------------------------------------------------------------\n\n";
-   
+
     util::printSubHeader("Test Iterators");
 
     // Finally, print your list as shown:
@@ -122,17 +122,14 @@ int main() {
     std::cout << "\tmyList size now is: " << myList.size() << "\n";
     std::cout << "\tis myList empty? " << (myList.empty() ? "true" : "false") << "\n";
 
-
     util::printTestCase("pop_front() on the empty list");
     try {
         myList.pop_front();
-    }
-    catch (char* e) {
-        std::cerr << "Caught exception:\n" << e << "\n\n";
+    } catch (char* e) {
+        std::cerr << "Caught exception:\n"
+                  << e << "\n\n";
     }
     std::cout << "\tmyList: " << myList << "\n";
-
-
 
     std::cout << "-------------------------------------------------------------------------------\n\n";
 
@@ -172,14 +169,12 @@ int main() {
     try {
         itE = l.end();
         l.erase(itE);
-    }
-    catch (char *e) {
-        std::cerr << "Caught exception:\n" << e << "\n\n";
+    } catch (char* e) {
+        std::cerr << "Caught exception:\n"
+                  << e << "\n\n";
     }
 
     std::cout << " List l: " << l << "\n";
-
-
 
     std::cout << "-------------------------------------------------------------------------------\n\n";
 

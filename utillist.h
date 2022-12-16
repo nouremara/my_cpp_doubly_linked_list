@@ -25,66 +25,79 @@
 
 #include <iostream>
 
-// namespace util to contain the Class list
-namespace util {
 /**
- * Class list represents a container which organizes stored objects with
- * a so-called doubly linked list.
- * A doubly linked list is basically a list of nodes which are connected
- * among each other
+ * namespace util to contain the Class list
  */
-template <class T>  // Template to make the list generic such that any type
-                    // can be stored.
-                    // T represents the actual type
+namespace util {
+
+/**
+ * Template to make the list generic such that any type can be stored.
+ * T represents the actual type
+ */
+template <class T>
+/**
+ * @brief Implementation of of own doubly linked list class
+ *
+ * This class presents own list class implementation which organizes stored
+ * objects with a so-called doubly linked list.
+ * A doubly linked list is basically a list of nodes which are connected among
+ * each other in both directions.
+ *
+ * This util::list is a container that supports adding, insertion, removal,
+ * and moving of elements from anywhere in the container. It provides also
+ * bidirectional iteration capability. This class behavior will be similar (but
+ * simplified) to the std::list.
+ */
 class list {
     /**
-     * @brief nested class representing an node element in the list
+     * @brief nested class representing a node and its data element in the list
      *
      * Each node has a data item, a pointer to the previous node, and
      * a pointer to the next node.
      */
     struct Node {
-        T data;      // date element (object type) to store in the node
-        Node* prev;  // pointer to predecessor node
-        Node* next;  // pointer to successor node
+        T data;      ///< date element (object type) to store in the node
+        Node* prev;  ///< pointer to predecessor node
+        Node* next;  ///< pointer to successor node
 
-        // default constructor create a stand-alone node.
+        /** default constructor create a stand-alone node. */
         Node() : next(nullptr), prev(nullptr) {}
 
-        // constructor of the node
-        // fills the data element
-        // unset its predecessor and successor node pointers
-        // as they will be adjusted later
+        /** constructor of the node fills the data element unset its
+         * predecessor and successor node pointers as they will be
+         * adjusted later
+         */
         Node(const T& element, Node* next_node_ptr = nullptr, Node* prev_node_ptr = nullptr)
             : next(next_node_ptr),
               prev(prev_node_ptr),
               data(element) {}
     };
 
-    Node *head, *tail;  // pointers to first and last nodes respectively
+    Node *head, *tail;  ///< pointers to first and last nodes respectively
 
-    // create a placeholder node after the list tail node
-    // note that the data member of this node is not initialized as it is not needed
-    // this will rresult in an undefined behavior when accessing it (as expected).
+    /** a placeholder node after the list tail node
+     * note that the data member of this node is not initialized as it is not needed
+     * this will rresult in an undefined behavior when accessing it (as expected).
+     */
     Node* beyond_tail;
 
    public:
-    // default constructor creates an empty list
+    /** default constructor creates an empty list */
     list() : head(nullptr), tail(nullptr), beyond_tail(nullptr) {}
 
-    // destructor
+    /** destructor */
     ~list();
 
     list(const list<T>& other_doubly_linked_list) = delete;
     list& operator=(list const&) = delete;
 
-    // Gives access to the first element of the list
+    /** Gives access to the first element of the list */
     T& front() { return head->data; }
 
-    // Gives access to the last element of the list
+    /** Gives access to the last element of the list */
     T& back() { return tail->data; }
 
-    // Adds element to the front of the list
+    /** Adds element to the front of the list */
     void push_front(const T& element) {
         Node* node = new Node(element);
 
@@ -99,12 +112,12 @@ class list {
         head = node;
     }
 
-    void pop_front() throw (char*);
+    void pop_front() throw(char*);
 
-    // removes the last element from the list
+    /** removes the last element from the list */
     void pop_back();
 
-    // Adds element to the end of the list
+    /** Adds element to the end of the list */
     void push_back(const T& element) {
         Node* node = new Node(element);
         if (tail == nullptr) {
@@ -118,13 +131,13 @@ class list {
         tail = node;
     }
 
-    // Clears the list
+    /** Clears the list */
     void clear();
 
-    // Returns the amount of stored objects
+    /** Returns the amount of stored objects */
     size_t size() const;
 
-    // Returns true, if the list does not contain elements
+    /** Returns true, if the list does not contain elements */
     bool empty() const { return size() ? false : true; }
 
     template <class U>
@@ -134,45 +147,46 @@ class list {
     void display(std::ostream& out = std::cout) const;
 
    public:
-    // To allow iterating your list, a simplified version of the iterator
-    // concept is implemented as a nested class
+    /**  To allow iterating your list, a simplified version of the iterator
+     * concept is implemented as a nested class
+     */
     class iterator {
         friend class list;
 
-        Node* m_pNode;
+        Node* m_pNode;  ///< pointer to the node this iterator associated to
 
        public:
+        /** constructor create the iterator and associate it to a node. */
         iterator(Node* pNode) : m_pNode(pNode) {}
 
-        // Two iterators are equal if they point to the same node
+        /**  Two iterators are equal if they point to the same node. */
         inline bool operator==(const iterator& it) const { return this->m_pNode == it.m_pNode; }
+
+        /**  Two iterators are not equal if they point to different nodes. */
         inline bool operator!=(const iterator& it) const { return this->m_pNode != it.m_pNode; }
 
+        /**  advance the iterator to the next node. */
         iterator& operator++() {
             // Point/Go to the next value of m_pNode
             m_pNode = static_cast<Node*>(m_pNode)->next;
             return *this;
         }
 
+        /**  advance the iterator to the next node (Postfix variant). */
         iterator operator++(int) {
-            // Postfix variant
             iterator tmp(*this);
             ++*this;
             return tmp;
         }
 
-        T& operator*() const {
-            // Return a reference to the object stored in the current node
-            return static_cast<Node*>(m_pNode)->data;
-        }
+        /**  Return a reference to the object stored in the current node. */
+        T& operator*() const { return static_cast<Node*>(m_pNode)->data; }
 
-        T* operator->() const {
-            // Return a pointer to the object stored in the current node
-            return &(static_cast<Node*>(m_pNode)->data);
-        }
+        /**  Return a pointer to the object stored in the current node. */
+        T* operator->() const { return &(static_cast<Node*>(m_pNode)->data); }
     };
 
-    // Returns an iterator which points to the first element of your list
+    /**  Returns an iterator which points to the first element of your list. */
     iterator begin() { return iterator(head); }
 
     /**
@@ -228,10 +242,10 @@ class list {
      *  This function will erase the element at the given position and thus
      *  shorten the %list by one.
      */
-    iterator erase(iterator position)  throw (char *) {
+    iterator erase(iterator position) throw(char*) {
         // the end() iterator cannot be used as a parameter
         if (position == end()) {
-            //return end();
+            // return end();
             throw "Exception from util::list::erase(): iterator must be valid and dereferenceable. end() iterator cannot be used as a parameter";
         }
 

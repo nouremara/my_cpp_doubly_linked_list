@@ -52,7 +52,7 @@ void printHeader(const char* text) {
 }
 
 void printSubHeader(const char* text) {
-    std::cout << "\033[32m";   // set text and background colors
+    std::cout << "\033[32m";  // set text and background colors
     std::cout << text;
     std::cout << "\033[0m\n";  // reset text and background colors
 }
@@ -60,7 +60,7 @@ void printSubHeader(const char* text) {
 void printTestCase(const char* text) {
     std::cout << "\033[93m  > [";  // set text and background colors
     std::cout << text;
-    std::cout << "]\033[0m \n";    // reset text and background colors
+    std::cout << "]\033[0m \n";  // reset text and background colors
 }
 
 }  // namespace util

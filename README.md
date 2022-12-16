@@ -1,7 +1,7 @@
 # my_cpp_doubly_linked_list
-> Implementation of Own String Class
+> Implementation of Own Doubly Linked List Class
  
- In this presents an implementation of a class named `util::list`. This class behavior is a simplified implementation of the `std::list`. Class `list` represents a container which organizes stored objects with a so-called doubly linked list. A doubly linked list is basically a list of nodes which are connected among each other.
+ In this repository, I have an implementation of a class named `util::list`. This class behavior is a simplified implementation of the `std::list`. Class `list` represents a container which organizes stored objects with a so-called doubly linked list. A doubly linked list is basically a list of nodes which are connected among each other.
 
  The doubly linked list data structure is implemented as shown in the following figure:
 
