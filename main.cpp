@@ -15,8 +15,8 @@
  *
  * Defines the entry point for the NourUtilList application
  * In this application the class util::list is used and tested.
- * Each method and operator is tested with all possible uasges (e.g.,
- * pushing and poping elements etc.)
+ * Each method and operator is tested with all possible usages (e.g.,
+ * pushing and popping elements etc.)
  * Note: For this task some error handling is implemented.
  * An exception-based error handling for various error cases.
  * Example: Calling pop_front on an empty list shall result
@@ -111,9 +111,16 @@ int main() {
     std::cout << "-------------------------------------------------------------------------------\n\n";
 
     util::printSubHeader("Test Other Methods");
+    util::printTestCase("Test size() and empty()");
+    std::cout << "\tmyList: " << myList << "\n";
+    std::cout << "\tmyList size now is: " << myList.size() << "\n";
+    std::cout << "\tis myList empty? " << (myList.empty() ? "true" : "false") << "\n";
+
     util::printTestCase("Test clear()");
     myList.clear();
     std::cout << "\tmyList: " << myList << "\n";
+    std::cout << "\tmyList size now is: " << myList.size() << "\n";
+    std::cout << "\tis myList empty? " << (myList.empty() ? "true" : "false") << "\n";
     std::cout << "-------------------------------------------------------------------------------\n\n";
 
     util::list<Person> l;  // Store a type of your choice

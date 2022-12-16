@@ -124,6 +124,9 @@ class list {
     // Returns the amount of stored objects
     size_t size() const;
 
+    // Returns true, if the list does not contain elements
+    bool empty() const { return size() ? false : true; }
+
     template <class U>
     friend std::ostream& operator<<(std::ostream& os, const list<U>& theList);
 
